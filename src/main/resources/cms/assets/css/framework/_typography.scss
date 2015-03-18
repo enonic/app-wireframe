@@ -1,0 +1,17 @@
+//#################################################
+// Typography
+//#################################################
+
+@import url('http://fonts.googleapis.com/css?family=Cabin+Sketch');
+
+html {
+  font-family: 'Cabin Sketch', cursive;
+}
+
+a {
+  color: $link-color;
+
+  &:hover {
+    color: $link-color-hover;
+  }
+}

@@ -1,0 +1,9 @@
+<div data-th-class="${columnConfig}">
+    <div data-th-each="region, iterStat : ${regions}">
+        <div data-th-class="${columnConfig + '__region' + iterStat.count}"  data-th-classappend="${columnConfig + '__region'}" data-portal-component-type="region">
+            <div data-th-each="component : ${region.value.components}" data-th-remove="tag">
+                <div data-portal-component="${component.path}" data-th-remove="tag"/>
+            </div>
+        </div>
+    </div>
+</div>

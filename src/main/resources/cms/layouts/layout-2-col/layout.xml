@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<layout-component>
+  <display-name>2 columns</display-name>
+  <config>
+    <input name="columnConfig" type="SingleSelector">
+      <label>Column configuration</label>
+      <immutable>false</immutable>
+      <indexed>false</indexed>
+      <occurrences minimum="1" maximum="1"/>
+      <config>
+        <options>
+          <option>
+            <label>50-50</label>
+            <value>50-50</value>
+          </option>
+          <option>
+            <label>75-25</label>
+            <value>75-25</value>
+          </option>
+          <option>
+            <label>25-75</label>
+            <value>25-75</value>
+          </option>
+        </options>
+        <selector-type>DROPDOWN</selector-type>
+      </config>
+    </input>
+  </config>
+  <regions>
+    <region name="left"/>
+    <region name="right"/>
+  </regions>
+</layout-component>

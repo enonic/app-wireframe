@@ -1,0 +1,20 @@
+%layout-region {
+  float: left;
+}
+
+.layout-25-25-25-25 {
+  &__region {
+    @extend %layout-region;
+  }
+
+  &__region1,
+  &__region2,
+  &__region3,
+  &__region4 {
+    width: 25%;
+
+    @include breakpoint($screen-small) {
+      width: 100%;
+    }
+  }
+}
