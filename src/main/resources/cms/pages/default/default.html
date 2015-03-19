@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=1"/>
     <title data-th-text="${pageTitle}">Enonic</title>
     <meta name="description" data-th-attr="content=${metaDescription}" content=""/>
-    <link rel="shortcut icon" href="../../assets/img/favicon.ico" data-th-href="${portal.assetUrl({'_path=img/favicon.ico'})}" type="image/x-icon"/>
+    <link rel="shortcut icon" href="../../assets/img/favicon.ico" data-th-href="${portal.assetUrl({'_path=img/favicon.ico'})}"
+          type="image/x-icon"/>
     <link rel="stylesheet" data-th-href="${portal.assetUrl({'_path=css/main.css'})}" href="/assets/css/main.css"/>
 
 </head>
@@ -22,7 +23,8 @@
             <li data-th-each="menuItem : ${menuItems}" class="site-nav__item">
                 <a href="#" data-th-href="${portal.pageUrl({'_path=' + menuItem.path})}"
                    data-th-text="${menuItem.menuName} ?: ${menuItem.displayName}"
-                   data-th-classappend="${menuItem.path == path ? 'site-nav__link--is-active' : ''}" class="site-nav__link">Page title</a>
+                   data-th-classappend="${menuItem.path == currentPath ? 'site-nav__link--is-active' : ''}" class="site-nav__link">Page
+                    title</a>
             </li>
         </ul>
     </nav>
@@ -35,6 +37,24 @@
 </main>
 
 <footer class="page-footer" role="contentinfo">
+    <nav class="footer-nav" role="navigation">
+        <ul data-th-if="${showMenuInFooter}" class="footer-nav__items">
+            <li data-th-each="menuItem : ${menuItems}" class="footer-nav__item">
+                <a href="#" data-th-href="${portal.pageUrl({'_path=' + menuItem.path})}"
+                   data-th-text="${menuItem.menuName} ?: ${menuItem.displayName}"
+                   data-th-classappend="${menuItem.path == currentPath ? 'site-nav__link--is-active' : ''}" class="footer-nav__link">Page
+                    title</a>
+                <!--<ul data-th-if="${menuItem.hasChildren}" class="footer-nav__items--depth1">
+                    <li data-th-each="menuItem : ${menuItem.children}" class="footer-nav__item--depth1">
+                        <a href="#" data-th-href="${portal.pageUrl({'_path=' + menuItem.path})}"
+                           data-th-text="${menuItem.menuName} ?: ${menuItem.displayName}"
+                           data-th-classappend="${menuItem.path == currentPath ? 'site-nav__link--is-active' : ''}" class="footer-nav__link">Page
+                            title</a>
+                    </li>
+                </ul>-->
+            </li>
+        </ul>
+    </nav>
 </footer>
 
 <script data-th-inline="javascript">

@@ -1,0 +1,12 @@
+.layout {
+  @extend %clearfix;
+
+  &__region {
+    float: left;
+  }
+
+  &__region-wrapper {
+    margin: 0 10px;
+    border: 1px dotted #ccc;
+  }
+}

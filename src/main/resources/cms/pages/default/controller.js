@@ -19,13 +19,14 @@ function handleGet(req) {
         var model = {};
         model.mainRegion = me.content.page.regions['main'];
         model.sitePath = me.site['_path'];
+        model.currentPath = me.content._path;
         model.pageTitle = getPageTitle();
         model.metaDescription = getMetaDescription();
         model.menuItems = UTIL.menu.get(3);
         model.siteName = me.site.displayName;
+        model.showMenuInFooter = showMenuInFooter();
 
-
-        UTIL.log(UTIL.menu.get(3));
+        UTIL.log(model.menuItems);
 
         return model;
     }
@@ -46,6 +47,16 @@ function handleGet(req) {
             }
         }
         return metaDescription;
+    }
+
+    function showMenuInFooter() {
+        var show = false;
+        if (me.site.moduleConfigs[module.name]) {
+            if (me.site.moduleConfigs[module.name]['showMenuInFooter']) {
+                show = true;
+            }
+        }
+        return show;
     }
 
     return renderView();

@@ -13,9 +13,40 @@ function handleGet(req) {
     }
 
     function createModel() {
+        UTIL.log(execute('portal.getContent'));
         var model = {};
         return model;
     }
+
+    /*function getBreadcrumbTrail() {
+        var content = execute('portal.getContent');
+        var fullPath = content._path;
+
+        var pathArray = fullPath.split('/');
+
+
+        var breadCrumbTrail = [];
+
+
+
+
+
+
+    }
+
+    function getBreadcrumb(path) {
+        var breadcrumb = {};
+        var result = execute('content.get', {
+            key: path
+        });
+
+        if (result) {
+            breadcrumb.path =
+        }
+
+        return breadcrumb;
+
+    }*/
 
     return renderView();
 }

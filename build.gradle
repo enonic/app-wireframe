@@ -28,6 +28,7 @@ apply plugin: "com.github.robfletcher.compass"
 version = '1.0.0-SNAPSHOT'
 group = 'com.enonic.module'
 
+
 module {
     displayName = 'Enonic XP Wireframe Module'
 }

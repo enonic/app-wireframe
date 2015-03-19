@@ -17,10 +17,7 @@ function handleGet(req) {
 
         var model = {};
         model.columnConfig = getColumnConfig();
-        model.regions = {
-            1: me.component.regions['left'],
-            2: me.component.regions['right']
-        }
+        model.regions = me.component.regions;
         return model;
     }
 

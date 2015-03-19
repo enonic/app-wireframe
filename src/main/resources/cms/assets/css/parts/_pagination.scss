@@ -1,0 +1,34 @@
+.pagination {
+  @include unstyled-list;
+
+  &__item {
+    float: left;
+    border-width: 1px 0px 1px 1px;
+    border-color: #ccc;
+    border-style: solid;
+
+    &:last-child {
+      border-right-width: 1px;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    text-decoration: none;
+    padding: 5px;
+
+    &:hover {
+      background-color: #ccc;
+    }
+
+    &--is-active {
+      background-color: #428bca;
+      color: #fff;
+    }
+
+    &--is-disabled {
+      pointer-events: none;
+      @include opacity(0.5);
+    }
+  }
+}

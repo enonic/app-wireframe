@@ -31,8 +31,8 @@
     </input>
   </config>
   <regions>
-    <region name="left"/>
-    <region name="middle"/>
-    <region name="right"/>
+    <region name="1"/>
+    <region name="2"/>
+    <region name="3"/>
   </regions>
 </layout-component>

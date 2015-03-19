@@ -7,7 +7,14 @@
     <name>Enonic AS</name>
     <url>http://www.enonic.com</url>
   </vendor>
-  <config/>
+  <config>
+
+    <input name="showMenuInFooter" type="Checkbox">
+      <label>Show menu in footer</label>
+      <immutable>false</immutable>
+      <indexed>false</indexed>
+      <occurrences minimum="0" maximum="1"/>
+    </input>
+      </config>
   <x-data mixin="menu-item"/>
-  <x-data mixin="html-meta"/>
 </module>
