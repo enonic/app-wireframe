@@ -44,14 +44,6 @@
                    data-th-text="${menuItem.menuName} ?: ${menuItem.displayName}"
                    data-th-classappend="${menuItem.path == currentPath ? 'site-nav__link--is-active' : ''}" class="footer-nav__link">Page
                     title</a>
-                <!--<ul data-th-if="${menuItem.hasChildren}" class="footer-nav__items--depth1">
-                    <li data-th-each="menuItem : ${menuItem.children}" class="footer-nav__item--depth1">
-                        <a href="#" data-th-href="${portal.pageUrl({'_path=' + menuItem.path})}"
-                           data-th-text="${menuItem.menuName} ?: ${menuItem.displayName}"
-                           data-th-classappend="${menuItem.path == currentPath ? 'site-nav__link--is-active' : ''}" class="footer-nav__link">Page
-                            title</a>
-                    </li>
-                </ul>-->
             </li>
         </ul>
     </nav>
