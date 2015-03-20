@@ -1,7 +1,7 @@
 <div data-th-class="${columnConfig + ' layout'}">
     <div data-th-each="region, iterStat : ${regions}" data-th-remove="tag">
-        <div data-th-class="${columnConfig + '__region' + iterStat.count}"  data-th-classappend="${columnConfig + '\_\_region + layout__region'}" data-portal-component-type="region">
-            <div class="layout__region-wrapper">
+        <div data-th-class="${columnConfig + '__region' + iterStat.count}"  data-th-classappend="${columnConfig + '\_\_region + layout__region'}">
+            <div class="layout__region-wrapper" data-portal-component-type="region">
                 <div data-th-each="component : ${region.value.components}" data-th-remove="tag">
                     <div data-portal-component="${component.path}" data-th-remove="tag"/>
                 </div>
