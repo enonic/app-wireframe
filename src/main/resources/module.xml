@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module>
-  <display-name>Enonic XP Wireframe</display-name>
-  <info>Enonic XP Wireframe Module</info>
+  <display-name>Wireframe</display-name>
+  <info>Wireframe Module</info>
   <url>http://enonic.com/</url>
   <vendor>
     <name>Enonic AS</name>
