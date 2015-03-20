@@ -27,7 +27,7 @@
     </input>
   </config>
   <regions>
-    <region name="1"/>
-    <region name="2"/>
+    <region name="left"/>
+    <region name="right"/>
   </regions>
 </layout-component>

@@ -7,6 +7,7 @@
 @import 'compass/css3.scss';
 @import 'breakpoint';
 @import 'helpers/placeholders';
+@import 'helpers/functions';
 @import 'helpers/mixins';
 
 
@@ -14,6 +15,7 @@
 @import 'normalize';
 @import 'framework/structural';
 @import 'framework/typography';
+@import 'framework/images';
 @import 'framework/navigation';
 @import 'framework/buttons';
 @import 'framework/forms';

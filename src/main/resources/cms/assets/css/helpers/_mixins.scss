@@ -2,9 +2,12 @@
 // Mixins
 //#################################################
 
-@function calculateRem($size) {
-  $remSize: $size / 16px;
-  @return $remSize * 1rem;
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
 }
 
 @mixin font-size($size) {

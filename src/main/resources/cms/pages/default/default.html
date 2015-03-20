@@ -15,7 +15,7 @@
 <header class="page-header" role="banner">
     <a data-th-href="${portal.pageUrl({'_path=' + sitePath})}" class="page-header__logo" data-th-text="${siteName}"/>
 
-    <nav class="site-nav" aria-expanded="false" aria-labelledby="toggle-menu" role="navigation">
+    <nav class="site-nav nav" aria-expanded="false" aria-labelledby="toggle-menu" role="navigation">
         <button class="site-nav__toggle-button">
             <span class="site-nav__toggle-text">Menu</span>
         </button>
@@ -44,6 +44,7 @@
                    data-th-text="${menuItem.menuName} ?: ${menuItem.displayName}"
                    data-th-classappend="${menuItem.path == currentPath ? 'site-nav__link--is-active' : ''}" class="footer-nav__link">Page
                     title</a>
+
             </li>
         </ul>
     </nav>

@@ -7,13 +7,15 @@ function handleGet(req) {
     var me = this;
 
     function renderView() {
-        var view = resolve('test.html');
+        var view = resolve('list.html');
         var model = createModel();
         return UTIL.view.render(view, model);
     }
 
     function createModel() {
+        me.component = execute('portal.getComponent');
         var model = {};
+
         return model;
     }
 
