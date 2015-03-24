@@ -17,7 +17,7 @@ function handleGet(req) {
 
         var model = {};
         model.columnConfig = getColumnConfig();
-        model.regions = me.component.regions;
+        model.regions = getRegions();
         return model;
     }
 
@@ -27,6 +27,21 @@ function handleGet(req) {
             columnConfig = me.component.config.columnConfig;
         }
         return 'layout-' + columnConfig;
+    }
+
+    /**
+     * Get regions in correct order
+     * @returns {Array}
+     */
+    function getRegions() {
+        var regions = [];
+        var potentialRegions = ['left', 'middle', 'right', 'rightmost'];
+        for (var i = 0; i < potentialRegions.length; i++) {
+            if (me.component.regions[potentialRegions[i]]) {
+                regions.push(me.component.regions[potentialRegions[i]]);
+            }
+        }
+        return regions;
     }
 
     return renderView();
