@@ -24,7 +24,7 @@ function handleGet(req) {
         model.metaDescription = getMetaDescription();
         model.menuItems = UTIL.menu.get(3);
         model.siteName = me.site.displayName;
-        model.showMenuInFooter = showMenuInFooter();
+        model.showSocialMediaLinksInFooter = showSocialMediaLinksInFooter();
 
         UTIL.log(model.menuItems);
 
@@ -49,15 +49,17 @@ function handleGet(req) {
         return metaDescription;
     }
 
-    function showMenuInFooter() {
+    function showSocialMediaLinksInFooter() {
         var show = false;
         if (me.site.moduleConfigs[module.name]) {
-            if (me.site.moduleConfigs[module.name]['showMenuInFooter']) {
+            if (me.site.moduleConfigs[module.name]['showSocialMediaLinksInFooter']) {
                 show = true;
             }
         }
         return show;
     }
+
+
 
     return renderView();
 }
