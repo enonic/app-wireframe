@@ -20,6 +20,12 @@ exports.menu.get = function (levels) {
  * @return {Array} Array of submenus
  */
 function getSubMenus(parentContent, levels) {
+    var subMenus = [];
+
+    if (parentContent.type === 'portal:site' && isMenuItem(parentContent)) {
+        subMenus.push(menuItemToJson(parentContent, 0));
+    }
+
     var children = execute('content.getChildren', {
         key: parentContent._id,
         count: 100
@@ -27,7 +33,6 @@ function getSubMenus(parentContent, levels) {
 
     levels--;
 
-    var subMenus = [];
     children.contents.forEach(function (child) {
         if (isMenuItem(child)) {
             subMenus.push(menuItemToJson(child, levels));
