@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=1"/>
+    <title data-th-text="${pageTitle}">Enonic</title>
+    <meta name="description" data-th-attr="content=${metaDescription}" content=""/>
+<!--    <link rel="shortcut icon" href="../../assets/img/favicon.ico" data-th-href="${portal.assetUrl({'_path=img/favicon.ico'})}"
+          type="image/x-icon"/>-->
+    <link rel="stylesheet" data-th-href="${portal.assetUrl({'_path=css/main.css'})}" href="/assets/css/main.css"/>
+
+</head>
+<body data-portal-component-type="page">
+
+<header class="page-header" role="banner">
+    <a data-th-href="${portal.pageUrl({'_path=' + sitePath})}" class="page-header__logo" data-th-text="${siteName}"/>
+
+    <nav class="site-nav nav" aria-expanded="false" aria-labelledby="toggle-menu" role="navigation">
+        <button class="site-nav__toggle-button">
+            <span class="site-nav__toggle-text">Menu</span>
+        </button>
+        <ul class="site-nav__list">
+            <li data-th-each="menuItem : ${menuItems}" class="site-nav__item">
+                <a href="#" data-th-href="${portal.pageUrl({'_path=' + menuItem.path})}"
+                   data-th-text="${menuItem.menuName} ?: ${menuItem.displayName}"
+                   data-th-classappend="${menuItem.path == currentPath ? 'site-nav__link--is-active' : ''}" class="site-nav__link">Page
+                    title</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<main role="main" id="main" data-th-attr="data-portal-region=${mainRegion.name}">
+    <div data-th-each="component : ${mainRegion.components}" data-th-remove="tag">
+        <div data-portal-component="${component.path}" data-th-remove="tag"></div>
+    </div>
+</main>
+
+<footer class="page-footer" role="contentinfo">
+    <ul data-th-if="${showSocialMediaLinksInFooter}" class="social-media__items">
+        <li class="social-media__item">
+            <a href="#" class="social-media__link social-media__link--twitter">Twitter</a>
+        </li>
+        <li class="social-media__item">
+            <a href="#" class="social-media__link social-media__link--facebook">Facebook</a>
+        </li>
+        <li class="social-media__item">
+            <a href="#" class="social-media__link social-media__link--instagram">Instagram</a>
+        </li>
+    </ul>
+</footer>
+
+<script data-th-inline="javascript">
+    var defer = /*[[${portal.assetUrl({'_path=js/all.js'})}]]*/ null
+
+    function downloadJSAtOnload() {
+        var element = document.createElement("script");
+        element.src = defer;
+        document.body.appendChild(element);
+    }
+    if (window.addEventListener) {
+        window.addEventListener("load", downloadJSAtOnload, false);
+    } else if (window.attachEvent) {
+        window.attachEvent("onload", downloadJSAtOnload);
+    } else {
+        window.onload = downloadJSAtOnload;
+    }
+</script>
+
+</body>
+</html>

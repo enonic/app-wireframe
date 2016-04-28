@@ -1,0 +1,1 @@
+//$('img').ENONIC_responsiveImages();

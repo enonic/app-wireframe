@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<content-type>
+  <display-name>Test</display-name>
+  <super-type>base:structured</super-type>
+  <is-abstract>false</is-abstract>
+  <is-final>true</is-final>
+  <is-built-in>false</is-built-in>
+  <allow-child-content>true</allow-child-content>
+  <form>
+    <input name="image" type="ImageSelector">
+      <label>Non-required image</label>
+      <occurrences minimum="0" maximum="1"/>
+    </input>
+  </form>
+  <x-data mixin="menu-item"/>
+</content-type>

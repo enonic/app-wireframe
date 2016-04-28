@@ -1,0 +1,11 @@
+
+<div data-th-each="image : ${images}" data-th-remove="tag">
+    <figure data-th-if="${image.isResponsive}" class="responsive-img">
+        <noscript>
+            <img data-th-src="${image.fallback}" src="" alt=""/>
+        </noscript>
+        <img data-th-attr="data-srcset=${image.srcSet}" data-th-src="${image.placeholder} ? ${portal.imagePlaceholder({'width=' + image.placeholder.x, 'height=' + image.placeholder.y})} : ${image.src}" src="" alt="" class="responsive-img__img"/>
+
+    </figure>
+    <img data-th-if="${!image.isResponsive}" data-th-src="${image.src}" src="" alt=""/>
+</div>

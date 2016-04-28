@@ -1,1 +1,0 @@
-$('img').UTIL_responsiveImages();
