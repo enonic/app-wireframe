@@ -67,27 +67,27 @@ publishing {
 javascript.source {
     custom {
         js {
-            srcDir "src/main/resources/site/assets/js"
+            srcDir "src/main/resources/assets/js"
             include "*.js"
             //exclude "*.min.js"
         }
     }
     lib {
         js {
-            srcDir "src/main/resources/site/assets/lib"
+            srcDir "src/main/resources/assets/lib"
             include "**/*.js"
             //exclude "*.min.js"
         }
     }
     vendor {
         js {
-            srcDir "src/main/resources/site/assets/js/vendor"
+            srcDir "src/main/resources/assets/js/vendor"
             include "*.js"
         }
     }
     jquery {
         js {
-            srcDir "src/main/resources/site/assets/js/vendor/jquery"
+            srcDir "src/main/resources/assets/js/vendor/jquery"
             include "*.js"
         }
     }
@@ -108,7 +108,7 @@ jshint {
 
 minifyJs {
     source = javascript.source.custom.js.files
-    dest = file("${buildDir}/resources/main/site/assets/js/custom.min.js")
+    dest = file("${buildDir}/resources/main/assets/js/custom.min.js")
     closure {
         warningLevel = 'QUIET'
     }
@@ -117,18 +117,18 @@ minifyJs {
 // Configure the built-in task
 combineJs {
     source = javascript.source.jquery.js.files + javascript.source.vendor.js.files + javascript.source.lib.js.files + javascript.source.custom.js.files
-    dest = file("${buildDir}/resources/main/site/assets/js/all.js")
+    dest = file("${buildDir}/resources/main/assets/js/all.js")
 }
 
 requireJs {
     source = javascript.source.custom.js.files
-    dest = file("${buildDir}/resources/main/site/assets/js/main-built.js")
-    requirejs.buildprofile = new File('src/main/resources/site/assets/js/build.js')
+    dest = file("${buildDir}/resources/main/assets/js/main-built.js")
+    requirejs.buildprofile = new File('src/main/resources/assets/js/build.js')
 }
 
 compass {
-    cssDir = file("${buildDir}/resources/main/site/assets/css")
-    sassDir = file("src/main/resources/site/assets/css")
+    cssDir = file("${buildDir}/resources/main/assets/css")
+    sassDir = file("src/main/resources/assets/css")
 }
 
 jar.dependsOn += compassCompile
