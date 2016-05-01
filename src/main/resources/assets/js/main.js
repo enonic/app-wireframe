@@ -1,1 +1,1 @@
-//$('img').ENONIC_responsiveImages();
+require('./menu.js');

@@ -3,16 +3,18 @@
 //#################################################
 
 // Base
-@import 'helpers/variables';
-@import 'compass/css3.scss';
-@import 'breakpoint';
-@import 'helpers/placeholders';
-@import 'helpers/functions';
-@import 'helpers/mixins';
+@import 'global/variables';
+//@import 'breakpoint';
 
+@import 'lib/placeholders/*';
+@import 'lib/mixins/*';
+@import 'lib/*';
 
-// Framework
-@import 'normalize';
+@import 'global/mixins/*';
+@import 'global/*';
+
+@import 'vendor/*';
+
 @import 'framework/structural';
 @import 'framework/typography';
 @import 'framework/images';
@@ -22,14 +24,14 @@
 @import 'framework/lists';
 @import 'framework/tables';
 
+// Pages
+@import 'pages/*';
+
 // Layouts
 @import 'layouts/*';
 
 // Parts
 @import 'parts/*';
-
-// Third party
-//@import 'vendor/...';
 
 // Shame
 @import 'shame';

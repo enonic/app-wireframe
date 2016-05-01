@@ -6,7 +6,7 @@
 %btn {
   border: 1px solid #000;
   padding: 5px;
-  @include border-radius(4px);
+  border-radius: 4px;
   background-color: $btn-bg-color;
 
   &:hover {

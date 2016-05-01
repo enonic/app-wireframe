@@ -5,7 +5,7 @@
   &__region4 {
     width: 25%;
 
-    @include breakpoint($screen-small) {
+    @include breakpoint(small) {
       width: 100%;
     }
   }

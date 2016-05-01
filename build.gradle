@@ -16,13 +16,12 @@ buildscript {
     }
 }
 
-//apply plugin: 'idea'
+plugins {
+  id "com.moowork.gulp" version "0.11"
+}
+
 apply plugin: 'com.enonic.xp.app'
-//apply plugin: 'maven'
 apply plugin: 'maven-publish'
-apply plugin: 'com.eriwen.gradle.js'
-apply plugin: 'css'
-apply plugin: "com.github.robfletcher.compass"
 
 app {
     name = project.appName
@@ -45,9 +44,6 @@ dependencies {
     include "com.enonic.xp:lib-thymeleaf:${xpVersion}"
     include "com.enonic.lib:util:1.1.1"
     include "com.enonic.lib:menu:1.2.0"
-    compass "rubygems:breakpoint:2.5.0"
-    compass "rubygems:compass-normalize:1.5"
-    compass "rubygems:sass-globbing:1.1.1"
 }
 
 publishing {
@@ -63,73 +59,21 @@ publishing {
   }
 }
 
-// Declare your sources
-javascript.source {
-    custom {
-        js {
-            srcDir "src/main/resources/assets/js"
-            include "*.js"
-            //exclude "*.min.js"
-        }
-    }
-    lib {
-        js {
-            srcDir "src/main/resources/assets/lib"
-            include "**/*.js"
-            //exclude "*.min.js"
-        }
-    }
-    vendor {
-        js {
-            srcDir "src/main/resources/assets/js/vendor"
-            include "*.js"
-        }
-    }
-    jquery {
-        js {
-            srcDir "src/main/resources/assets/js/vendor/jquery"
-            include "*.js"
-        }
-    }
-    controllers {
-        js {
-            srcDir "src/main/resources/site/parts"
-            include "**/*.js"
-        }
-    }
+
+node {
+    // Version of node to use.
+    //version = '0.12.7'
+    version = '4.2.4'
+
+    // Enabled the automatic download. False is the default (for now).
+    download = true
 }
 
-jshint {
-    tasks.jshint.source = javascript.source.custom.js.files + javascript.source.lib.js.files
-    tasks.jshint.dest = file("${buildDir}/jshint.out")
-    tasks.jshint.reporter = 'checkstyle'
-    tasks.jshint.outputToStdOut = true
-}
+// makes sure on each build that gulp is installed
+gulp_build.dependsOn 'installGulp'
 
-minifyJs {
-    source = javascript.source.custom.js.files
-    dest = file("${buildDir}/resources/main/assets/js/custom.min.js")
-    closure {
-        warningLevel = 'QUIET'
-    }
-}
+// processes your package.json before running gulp build
+gulp_build.dependsOn 'npmInstall'
 
-// Configure the built-in task
-combineJs {
-    source = javascript.source.jquery.js.files + javascript.source.vendor.js.files + javascript.source.lib.js.files + javascript.source.custom.js.files
-    dest = file("${buildDir}/resources/main/assets/js/all.js")
-}
-
-requireJs {
-    source = javascript.source.custom.js.files
-    dest = file("${buildDir}/resources/main/assets/js/main-built.js")
-    requirejs.buildprofile = new File('src/main/resources/assets/js/build.js')
-}
-
-compass {
-    cssDir = file("${buildDir}/resources/main/assets/css")
-    sassDir = file("src/main/resources/assets/css")
-}
-
-jar.dependsOn += compassCompile
-jar.dependsOn += combineJs
+// runs "gulp build" as part of your gradle build
+jar.dependsOn gulp_build
