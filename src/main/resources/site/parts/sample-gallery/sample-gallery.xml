@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<part>
+    <display-name>Sample gallery</display-name>
+    <config>
+        <input name="label" type="TextLine">
+            <label>Label</label>
+            <occurrences minimum="0" maximum="1"/>
+        </input>
+        <input name="aspectRatio" type="ComboBox">
+            <label>Aspect ratio</label>
+            <occurrences minimum="1" maximum="1"/>
+            <config>
+                <option value="cinema">Cinema (21:9)</option>
+                <option value="widescreen">Widescreen (16:9)</option>
+                <option value="regular">Regular (4:3)</option>
+                <option value="square">Square (1:1)</option>
+                <option value="portrait">Portrait (3:4)</option>
+                <option value="tall">Tall (9:16)</option>
+                <option value="skyscraper">Skyscraper (9:21)</option>
+            </config>
+            <default>widescreen</default>
+        </input>
+    </config>
+</part>
