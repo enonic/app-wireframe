@@ -1,139 +1,179 @@
-.layout-80-20 {
-  &__region1 {
-    width: 80%;
-    @include breakpoint(small) {
+.layout-2-col {
+  &-80-20,
+  &-75-25,
+  &-70-30,
+  &-60-40,
+  &-50-50,
+  &-40-60,
+  &-30-70,
+  &-25-75,
+  &-20-80 {
+    @include clearfix;
+
+    &__container {
       width: 100%;
+      max-width: 1024px;
+      margin-left: auto;
+      margin-right: auto;
+      @include clearfix;
+    }
+
+    &__region {
+      float: left;
+
+      &-wrapper {
+        @include clearfix;
+        margin: 0 10px;
+        padding: 10px;
+        border: 1px dotted #ccc;
+      }
+
+      &--1,
+      &--2 {
+        @include media('<medium') {
+          width: 100%;
+        }
+      }
     }
   }
 
-  &__region2 {
-    width: 20%;
-    @include breakpoint(small) {
-      width: 100%;
-    }
-  }
-}
+  @mixin layout-2-col($widths...) {
 
-.layout-75-25 {
-  &__region1 {
-    width: 75%;
-    @include breakpoint(small) {
-      width: 100%;
-    }
-  }
+    $className: '';
 
-  &__region2 {
-    width: 25%;
-    @include breakpoint(small) {
-      width: 100%;
+    @each $width in $widths {
+      $className: $className + '-' + $width;
     }
-  }
-}
 
-.layout-70-30 {
-  &__region1 {
-    width: 70%;
-    @include breakpoint(small) {
-      width: 100%;
+    &#{$className} {
+
+      @for $i from 1 through length($widths) {
+        $width: nth($widths, $i);
+        &__region--#{$i} {
+          @include media('>=medium') {
+            width: $width + %;
+          }
+        }
+      }
     }
   }
 
-  &__region2 {
-    width: 30%;
-    @include breakpoint(small) {
-      width: 100%;
-    }
-  }
-}
+  @include layout-2-col(80,20);
+  @include layout-2-col(75,25);
+  @include layout-2-col(70,30);
+  @include layout-2-col(60,40);
+  @include layout-2-col(50,50);
+  @include layout-2-col(40,60);
+  @include layout-2-col(30,70);
+  @include layout-2-col(25,75);
+  @include layout-2-col(20,80);
 
-.layout-60-40 {
-  &__region1 {
-    width: 60%;
-    @include breakpoint(small) {
-      width: 100%;
-    }
-  }
+  /*&-80-20 {
+    &__region {
+      &--1 {
+        width: 80%;
+      }
 
-  &__region2 {
-    width: 40%;
-    @include breakpoint(small) {
-      width: 100%;
-    }
-  }
-}
-
-.layout-50-50 {
-  &__region1,
-  &__region2 {
-    width: 50%;
-
-    @include breakpoint(small) {
-      width: 100%;
-    }
-  }
-}
-
-.layout-40-60 {
-  &__region1 {
-    width: 40%;
-    @include breakpoint(small) {
-      width: 100%;
+      &--2 {
+        width: 20%;
+      }
     }
   }
 
-  &__region2 {
-    width: 60%;
-    @include breakpoint(small) {
-      width: 100%;
-    }
-  }
-}
+  &-75-25 {
+    &__region {
+      &--1 {
+        width: 75%;
+      }
 
-.layout-30-70 {
-  &__region1 {
-    width: 30%;
-    @include breakpoint(small) {
-      width: 100%;
+      &--2 {
+        width: 25%;
+      }
     }
   }
 
-  &__region2 {
-    width: 70%;
-    @include breakpoint(small) {
-      width: 100%;
-    }
-  }
-}
+  &-70-30 {
+    &__region {
+      &--1 {
+        width: 70%;
+      }
 
-.layout-25-75 {
-  &__region1 {
-    width: 25%;
-    @include breakpoint(small) {
-      width: 100%;
+      &--2 {
+        width: 30%;
+      }
     }
   }
 
-  &__region2 {
-    width: 75%;
-    @include breakpoint(small) {
-      width: 100%;
-    }
-  }
-}
+  &-60-40 {
+    &__region {
+      &--1 {
+        width: 60%;
+      }
 
-
-.layout-20-80 {
-  &__region1 {
-    width: 20%;
-    @include breakpoint(small) {
-      width: 100%;
+      &--2 {
+        width: 40%;
+      }
     }
   }
 
-  &__region2 {
-    width: 80%;
-    @include breakpoint(small) {
-      width: 100%;
+  &-50-50 {
+    &__region {
+      &--1,
+      &--2 {
+        width: 50%;
+      }
     }
   }
+
+  &-40-60 {
+    &__region {
+      &--1 {
+        width: 40%;
+      }
+
+      &--2 {
+        width: 60%;
+      }
+    }
+  }
+
+  &-30-70 {
+    &__region {
+      &--1 {
+        width: 30%;
+      }
+
+      &--2 {
+        width: 70%;
+      }
+    }
+  }
+
+  &-25-75 {
+    &__region {
+      &--1 {
+        width: 25%;
+      }
+
+      &--2 {
+        width: 75%;
+      }
+    }
+  }
+
+  &-20-80 {
+    &__region {
+      &--1 {
+        @include media('>=medium') {
+          width: 20%;
+        }
+      }
+
+      &--2 {
+        @include media('>=medium') {
+          width: 80%;
+        }
+      }
+    }
+  }*/
 }

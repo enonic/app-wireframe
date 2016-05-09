@@ -1,14 +1,98 @@
-@mixin breakpoint($value) {
-  // If the key exists in the map
-  @if map-has-key($breakpoints, $value) {
-    // Prints a media query based on the value
-    @media only screen and #{inspect(map-get($breakpoints, $value))} {
-      @content;
+////////////////////////////////////////////
+// function for finding next value in map //
+////////////////////////////////////////////
+@function nextKey($current-value, $mapped-list:$breakpoints) {
+  // get current key from list
+  $the-list: map-keys($mapped-list);
+
+  //find index of current value and add 1
+  $the-index: ( index( $the-list, $current-value) ) + 1;
+
+  // get value from list with new index
+  $new-value : nth($the-list, $the-index);
+
+  @return $new-value;
+
+}
+
+@mixin breakpoint($breakpoint1, $breakpoint2: null) {
+
+  $first-query: map-get($breakpoints, $breakpoint1);
+  $second-query: map-get($breakpoints, $breakpoint2);
+
+  // checks for single or dual arguement inputted
+  @if $breakpoint2 == null {
+    $mapped__keys : map-keys($breakpoints);
+
+    // get current index of breakpoint to decide what query to run
+    $index : index($mapped__keys, $breakpoint1);
+    @if $index {
+      // if it is not the last item in the map, run this
+      @if $index < length($breakpoints) {
+        @media screen and (min-width : map-get($breakpoints, $breakpoint1 ) ) and (max-width: map-get($breakpoints, nextKey($breakpoint1) )  - 1 ) {
+          @content;
+        }
+      }
+        // if it is the last in the map, run this
+      @elseif $index == length($breakpoints) {
+        @media screen and (min-width : map-get($breakpoints, $breakpoint1) ) {
+          @content;
+        }
+      }
+    }
+      // if key does not exsist, run this
+    @else {
+      @error "Sorry but #{$breakpoint1} is not a breakpoint in your setup";
     }
   }
-    // If the key doesn't exist in the map
+    // will call if two arguements inputted are the same type
+  @elseif type-of($breakpoint1) == type-of($breakpoint2)  {
+    body {
+      color: purple!important;
+    }
+    // if breakpoint is a string
+    @if type-of($breakpoint1) == string {
+
+      // if both values are in the $breakpoints
+      @if $first-query and $second-query {
+
+        // corrects ordering of variables for correct media query output
+        @if $first-query < $second-query {
+          @media screen and (min-width: $first-query) and (max-width: $second-query - 1) {
+            @content;
+          }
+        }
+        @else {
+          @media screen and (min-width: $second-query) and (max-width: $first-query - 1) {
+            @content;
+          }
+        }
+      }
+      @else {
+        $mapped__keys : map-keys($breakpoints);
+        @error "The given arguments are not valid you must choose from: #{$mapped__keys}";
+      }
+    }
+    @elseif type-of($breakpoint1) == number {
+      // corrects ordering of variables for correct media query output
+      @if $breakpoint1 < $breakpoint2 {
+        @media screen and (min-width: $breakpoint1) and (max-width: $breakpoint2) {
+          @content;
+        }
+      }
+      @else {
+        @media screen and (min-width: $breakpoint2) and (max-width: $breakpoint1) {
+          @content;
+        }
+      }
+    }
+    @else {
+      $the-type: type-of($breakpoint1);
+      @error "passed invalid arguement type #{$the-type}";
+    }
+  }
+    // if neither breakpoint is of the same type
   @else {
-    @warn "Unfortunately, no value could be retrieved from `#{$value}`. "
-            + "Available values are: #{map-keys($breakpoints)}.";
+    @error "Inputted values are invlaid. Must be array variables or matching unit types";
   }
 }

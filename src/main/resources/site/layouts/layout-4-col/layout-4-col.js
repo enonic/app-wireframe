@@ -1,40 +1,38 @@
-var UTIL = require('/lib/enonic/util/util');
-var portal = require('/lib/xp/portal');
-var thymeleaf = require('/lib/xp/thymeleaf');
+var libs = {
+    portal: require('/lib/xp/portal'),
+    thymeleaf: require('/lib/xp/thymeleaf'),
+    util: require('/lib/enonic/util')
+};
 
 // Handle GET request
 exports.get = handleGet;
 
 function handleGet(req) {
-    var me = this;
-
-    function renderView() {
-        var view = resolve('layout-4-col.html');
-        var model = createModel();
-
-        return {
-            body: thymeleaf.render(view, model)
-        };
-    }
+    var component = libs.portal.getComponent();
+    var view = resolve('layout-4-col.html');
+    var model = createModel();
 
     function createModel() {
-        me.component = portal.getComponent();
-
         var model = {};
-        model.columnConfig = getColumnConfig();
-        model.regions = UTIL.region.get();
-
-
+        model.layoutBaseClass = getLayoutBaseClass();
+        model.fullWidth = component.config.fullWidth ? true : false;
+        model.regions = libs.util.region.get();
         return model;
     }
 
     function getColumnConfig() {
         var columnConfig = '25-25-25-25';
-        if (me.component.config.columnConfig) {
-            columnConfig = me.component.config.columnConfig;
+        if (component.config.columnConfig) {
+            columnConfig = component.config.columnConfig;
         }
-        return 'layout-' + columnConfig;
+        return columnConfig;
     }
 
-    return renderView();
+    function getLayoutBaseClass() {
+        return 'layout-4-col-' + getColumnConfig();
+    }
+
+    return {
+        body: libs.thymeleaf.render(view, model)
+    };
 }

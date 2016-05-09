@@ -1,7 +1,7 @@
 <div data-th-class="${layoutBaseClass}">
     <div data-th-remove="${fullWidth} ? tag" data-th-class="${layoutBaseClass + '__container'}">
         <div data-th-each="region, iterStat : ${regions}" data-th-remove="tag">
-            <div data-th-class="${layoutBaseClass + '__region--' + iterStat.count}"  data-th-classappend="${layoutBaseClass + '\_\_region'}">
+            <div data-th-class="${layoutBaseClass + '__region' + iterStat.count}"  data-th-classappend="${layoutBaseClass + '\_\_region'}">
                 <div data-th-class="${layoutBaseClass} + '__region-wrapper'" data-th-attr="data-portal-region=${region.name}">
                     <div data-th-each="component : ${region.components}" data-th-remove="tag">
                         <div data-portal-component="${component.path}" data-th-remove="tag"/>

@@ -3,11 +3,16 @@
 //#################################################
 
 // Breakpoints
-$breakpoints: (
-        'small':  (max-width: 767px),
-        'medium': (min-width: 768px) and (max-width: 1023px),
-        'large':  (min-width: 1024px)
+$breakpoints : (
+        small: 320px,
+        medium: 768px,
+        large: 1024px
 );
+/*$breakpoints: (
+        'small':  (max-width: 767px),
+        'medium': '(min-width: 768px) and (max-width: 1023px)',
+        'large':  (min-width: 1024px)
+);*/
 
 // Colors
 $btn-bg-color: #cccccc;

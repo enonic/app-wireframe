@@ -1,0 +1,54 @@
+
+.page-header,
+.page-footer {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.page-header {
+  overflow: hidden;
+  padding-top: 20px;
+  margin-bottom: 20px;
+
+  &__logo {
+    text-decoration: none;
+    font-weight: bold;
+    @include font-size(40px);
+    float: left;
+  }
+
+  button {
+    float: right;
+  }
+
+
+}
+
+main {
+  margin-bottom: 50px;
+}
+
+.page-footer {
+  background: #eee;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.social-media {
+  &__items {
+    @include unstyled-list;
+    text-align: center;
+  }
+
+  &__item {
+    display: inline-block;
+    margin: 0 10px;
+  }
+
+  &__link {
+
+  }
+
+}
