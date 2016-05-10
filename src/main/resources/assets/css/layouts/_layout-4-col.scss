@@ -1,12 +1,57 @@
-.layout-25-25-25-25 {
-  &__region1,
-  &__region2,
-  &__region3,
-  &__region4 {
-    width: 25%;
+.layout-4-col {
+  &-25-25-25-25 {
+    @include clearfix;
 
-    @include breakpoint(small) {
+    &__container {
       width: 100%;
+      max-width: 1024px;
+      margin-left: auto;
+      margin-right: auto;
+      @include clearfix;
+    }
+
+    &__region {
+      float: left;
+
+      &-wrapper {
+        @include clearfix;
+        margin: 0 10px;
+        padding: 10px;
+        border: 1px dotted #ccc;
+      }
+
+      &--1,
+      &--2,
+      &--3,
+      &--4 {
+        @include media('<medium') {
+          width: 100%;
+        }
+      }
     }
   }
+
+  @mixin layout-4-col($widths...) {
+
+    $className: '';
+
+    @each $width in $widths {
+      $className: $className + '-' + $width;
+    }
+
+    &#{$className} {
+
+      @for $i from 1 through length($widths) {
+        $width: nth($widths, $i);
+        &__region--#{$i} {
+          @include media('>=medium') {
+            width: $width + %;
+          }
+        }
+      }
+    }
+  }
+
+  @include layout-4-col(25,25,25,25);
+
 }

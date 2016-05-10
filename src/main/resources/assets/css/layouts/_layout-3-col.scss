@@ -1,3 +1,69 @@
+.layout-3-col {
+  &-33-33-33,
+  &-50-25-25,
+  &-25-50-25,
+  &-25-25-50 {
+    @include clearfix;
+
+    &__container {
+      width: 100%;
+      max-width: 1024px;
+      margin-left: auto;
+      margin-right: auto;
+      @include clearfix;
+    }
+
+    &__region {
+      float: left;
+
+      &-wrapper {
+        @include clearfix;
+        margin: 0 10px;
+        padding: 10px;
+        border: 1px dotted #ccc;
+      }
+
+      &--1,
+      &--2,
+      &--3 {
+        @include media('<medium') {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  @mixin layout-3-col($widths...) {
+
+    $className: '';
+
+    @each $width in $widths {
+      $className: $className + '-' + $width;
+    }
+
+    &#{$className} {
+
+      @for $i from 1 through length($widths) {
+        $width: nth($widths, $i);
+        &__region--#{$i} {
+          @include media('>=medium') {
+            width: $width + %;
+          }
+        }
+      }
+    }
+  }
+
+  @include layout-3-col(33,33,33);
+  @include layout-3-col(50,25,25);
+  @include layout-3-col(25,50,25);
+  @include layout-3-col(25,25,50);
+
+}
+
+
+
+/*
 .layout-50-25-25 {
   &__region1 {
     width: 50%;
@@ -59,4 +125,4 @@
       width: 100%;
     }
   }
-}
+}*/
