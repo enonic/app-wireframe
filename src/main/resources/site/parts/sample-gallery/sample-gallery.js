@@ -14,7 +14,7 @@ function handleGet(req) {
 
     function createModel() {
         var model = {};
-        model.aspectRatio = component.config.aspectRatio;
+        model.aspectRatio = component.config.aspectRatio ? component.config.aspectRatio : 'widescreen';
         model.label = component.config.label;
         return model;
     }
