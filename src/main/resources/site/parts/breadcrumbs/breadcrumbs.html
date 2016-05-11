@@ -1,8 +1,5 @@
 <nav class="breadcrumbs part" role="navigation">
-    <span class="breadcrumbs__item">
-        <a href="#" class="breadcrumbs__link breadcrumbs__link--home">Home</a>
-    </span>
-    <span class="breadcrumbs__item">
-        <a href="#" class="breadcrumbs__link">Fish</a>
+    <span data-th-each="breadcrumb : ${breadcrumbTrail}" class="breadcrumbs__item">
+        <a class="breadcrumbs__link" data-th-href="${portal.pageUrl({'_path=' + breadcrumb._path})}" data-th-text="${breadcrumb.displayName}">Menuitem name</a>
     </span>
 </nav>
