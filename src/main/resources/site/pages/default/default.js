@@ -1,68 +1,72 @@
-var UTIL = require('/lib/enonic/util/util');
-var menu = require('/lib/enonic/menu/menu');
-var portal = require('/lib/xp/portal');
-var thymeleaf = require('/lib/xp/thymeleaf');
+var libs = {
+    portal: require('/lib/xp/portal'),
+    thymeleaf: require('/lib/xp/thymeleaf'),
+    menu: require('/lib/enonic/menu/menu'),
+    util: require('/lib/enonic/util/util')
+};
 
 // Handle GET request
 exports.get = handleGet;
 
 function handleGet(req) {
-    var me = this;
-
-    function renderView() {
-        var view = resolve('default.html');
-        var model = createModel();
-
-        return {
-            body: thymeleaf.render(view, model)
-        };
-    }
+    var siteConfig = libs.portal.getSiteConfig();
+    var site = libs.portal.getSite();
+    var content = libs.portal.getContent();
+    var view = resolve('default.html');
+    var model = createModel();
 
     function createModel() {
-        me.site = portal.getSite();
-        me.content = portal.getContent();
-
         var model = {};
-        model.mainRegion = me.content.page.regions['main'];
-        model.sitePath = me.site['_path'];
-        model.currentPath = me.content._path;
+        model.mainRegion = content.page.regions['main'];
+        model.sitePath = site['_path'];
+        model.currentPath = content._path;
         model.pageTitle = getPageTitle();
         model.metaDescription = getMetaDescription();
-        model.menuItems = menu.getMenuTree(3);
-        model.siteName = me.site.displayName;
+        model.menuItems = libs.menu.getMenuTree(3);
+        model.companyName = siteConfig.companyName;
+
+        libs.util.log(siteConfig);
+
+        model.showFooterNav = siteConfig.footerNavigation ? true : false;
+        model.footerSocial = libs.util.data.forceArray(siteConfig.footerSocial);
+
+
         model.showSocialMediaLinksInFooter = showSocialMediaLinksInFooter();
 
-        UTIL.log(app.name);
+        //UTIL.log(app.name);
 
         return model;
     }
 
     function getPageTitle() {
-        return me.content['displayName'] + ' - ' + me.site['displayName'];
+        return content['displayName'] + ' - ' + site['displayName'];
     }
 
     function getMetaDescription() {
         var appNamePropertyName = app.name.replace(/\./g,'-');
         var metaDescription = null;
 
-        if (me.content.x[appNamePropertyName]) {
-            if (me.content.x[appNamePropertyName]['html-meta']) {
-                if (me.content.x[appNamePropertyName]['html-meta']['htmlMetaDescription']) {
-                    metaDescription = me.content.x[appNamePropertyName]['html-meta']['htmlMetaDescription'];
+        if (content.x[appNamePropertyName]) {
+            if (content.x[appNamePropertyName]['html-meta']) {
+                if (content.x[appNamePropertyName]['html-meta']['htmlMetaDescription']) {
+                    metaDescription = content.x[appNamePropertyName]['html-meta']['htmlMetaDescription'];
                 }
             }
         }
         return metaDescription;
     }
 
+
     function showSocialMediaLinksInFooter() {
         var show = false;
-        var config = portal.getSiteConfig();
+        var config = libs.portal.getSiteConfig();
         if (config['showSocialMediaLinksInFooter']) {
             show = true;
         }
         return show;
     }
 
-    return renderView();
+    return {
+        body: libs.thymeleaf.render(view, model)
+    };
 }

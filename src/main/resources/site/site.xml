@@ -8,11 +8,40 @@
     <url>http://www.enonic.com</url>
   </vendor>
   <config>
-    <input name="showSocialMediaLinksInFooter" type="Checkbox">
-      <label>Show social media links in footer</label>
-      <immutable>false</immutable>
-      <indexed>false</indexed>
-      <occurrences minimum="0" maximum="1"/>
-    </input>
+    <field-set name="company">
+      <label>Company</label>
+      <items>
+        <input name="companyName" type="TextLine">
+          <label>Name</label>
+          <occurrences minimum="1" maximum="1"/>
+        </input>
+      </items>
+    </field-set>
+    <field-set name="footer">
+      <label>Footer</label>
+      <items>
+        <input name="footerText" type="HtmlArea">
+          <label>Footer text</label>
+          <occurrences minimum="0" maximum="1"/>
+        </input>
+        <input name="footerSocial" type="ComboBox">
+          <label>Social</label>
+          <occurrences minimum="0" maximum="0"/>
+          <config>
+            <option value="facebook">Facebook</option>
+            <option value="twitter">Twitter</option>
+            <option value="linkedin">LinkedIn</option>
+            <option value="instagram">Instagram</option>
+          </config>
+        </input>
+        <input name="footerNavigation" type="Checkbox">
+          <label>Show navigation in footer</label>
+          <immutable>false</immutable>
+          <indexed>false</indexed>
+          <occurrences minimum="0" maximum="1"/>
+        </input>
+      </items>
+    </field-set>
+
       </config>
 </site>

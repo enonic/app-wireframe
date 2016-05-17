@@ -13,7 +13,7 @@
 <body data-portal-component-type="page">
 
 <header class="page-header" role="banner">
-    <a data-th-href="${portal.pageUrl({'_path=' + sitePath})}" class="page-header__logo" data-th-text="${siteName}"/>
+    <a data-th-href="${portal.pageUrl({'_path=' + sitePath})}" class="page-header__logo" data-th-text="${companyName}"/>
 
     <nav class="site-nav nav" aria-expanded="false" aria-labelledby="toggle-menu" role="navigation">
         <button class="site-nav__toggle-button">
@@ -37,17 +37,23 @@
 </main>
 
 <footer class="page-footer" role="contentinfo">
-    <ul data-th-if="${showSocialMediaLinksInFooter}" class="social-media__items">
-        <li class="social-media__item">
-            <a href="#" class="social-media__link social-media__link--twitter">Twitter</a>
-        </li>
-        <li class="social-media__item">
-            <a href="#" class="social-media__link social-media__link--facebook">Facebook</a>
-        </li>
-        <li class="social-media__item">
-            <a href="#" class="social-media__link social-media__link--instagram">Instagram</a>
+
+    <ul class="footer-some__items">
+        <li data-th-each="socialMedia : ${footerSocial}" class="footer-some__item">
+            <a href="#" class="footer-some__link" data-th-classappend="'footer-some__link--' + ${socialMedia}" data-th-text="${socialMedia}">Twitter</a>
         </li>
     </ul>
+
+    <nav class="footer-nav" data-th-if="${showFooterNav}">
+        <ul class="footer-nav__list">
+            <li data-th-each="menuItem : ${menuItems}" class="footer-nav__item">
+                <a href="#" data-th-href="${portal.pageUrl({'_path=' + menuItem.path})}"
+                   data-th-text="${menuItem.menuName} ?: ${menuItem.displayName}"
+                   data-th-classappend="${menuItem.path == currentPath ? 'footer-nav__link--is-active' : ''}" class="footer-nav__link">Page
+                    title</a>
+            </li>
+        </ul>
+    </nav>
 </footer>
 
 <script data-th-src="${portal.assetUrl({'_path=js/main.min.js'})}"></script>
