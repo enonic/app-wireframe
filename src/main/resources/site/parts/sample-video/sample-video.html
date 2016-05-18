@@ -1,0 +1,13 @@
+<div class="sample-video">
+    <h2 data-th-if="${label}" data-th-text="${label}"></h2>
+    <div class="sample-video__player" data-th-classappend="'sample-video__player--' + ${aspectRatio}">
+        <button class="sample-video__play"/>
+
+        <div class="sample-video__ctrl">
+            <div class="sample-video__ctrl-play"></div>
+            <div class="sample-video__ctrl-progress"></div>
+            <div class="sample-video__ctrl-sound"></div>
+            <div class="sample-video__ctrl-expand"></div>
+        </div>
+    </div>
+</div>
