@@ -1,0 +1,43 @@
+.sample-map {
+
+  &__map {
+    position: relative;
+    border:solid 0px #000;
+    width: 100%;
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('../img/parts/sample-map/sample-map.svg');
+
+
+    &--cinema {
+      padding-bottom: 9/21 * 100%;
+    }
+
+    &--widescreen {
+      padding-bottom: 9/16 * 100%;
+    }
+
+    &--regular {
+      padding-bottom: 3/4 * 100%;
+    }
+
+    &--square {
+      padding-bottom: 100%;
+    }
+
+    &--portrait {
+      padding-bottom: 4/3 * 100%;
+    }
+
+    &--tall {
+      padding-bottom: 16/9 * 100%;
+    }
+
+    &--skyscraper {
+      padding-bottom: 21/9 * 100%;
+    }
+  }
+
+}
