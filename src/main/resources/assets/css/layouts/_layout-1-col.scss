@@ -8,8 +8,13 @@
       margin-right: auto;
     }
 
-    &__region1 {
-
+    &__region {
+      &-wrapper {
+        @include clearfix;
+        margin: 0 10px;
+        padding: 10px;
+        border: 1px dotted #ccc;
+      }
     }
 
 
