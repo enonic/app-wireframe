@@ -2,4 +2,9 @@
   box-sizing: border-box;
 }
 
-
+[data-portal-component-type='part'],
+[data-portal-component-type='layout'],
+[data-portal-component-type='text'],
+[data-portal-component-type='image'] {
+  margin-bottom: 30px;
+}
