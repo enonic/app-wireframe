@@ -16,7 +16,18 @@ function handleGet(req) {
         var model = {};
         model.aspectRatio = component.config.aspectRatio ? component.config.aspectRatio : 'widescreen';
         model.label = component.config.label;
+        model.linkUrl = getLinkUrl();
         return model;
+    }
+
+    function getLinkUrl() {
+        var linkUrl;
+        if (component.config['linkedPage']) {
+            linkUrl = libs.portal.pageUrl({
+                id: component.config['linkedPage']
+            });
+        }
+        return linkUrl;
     }
 
     return {
