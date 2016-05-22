@@ -1,0 +1,40 @@
+.sample-image {
+
+  &__image {
+    position: relative;
+    border:solid 5px #000;
+    width: 100%;
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    background-image: url('../img/parts/sample-image/sample-image__x.svg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+    &--cinema {
+      padding-bottom: 9/21 * 100%;
+    }
+
+    &--widescreen {
+      padding-bottom: 9/16 * 100%;
+    }
+
+    &--regular {
+      padding-bottom: 3/4 * 100%;
+    }
+
+    &--square {
+      padding-bottom: 100%;
+    }
+
+    &--portrait {
+      padding-bottom: 4/3 * 100%;
+    }
+
+    &--tall {
+      padding-bottom: 16/9 * 100%;
+    }
+
+    &--skyscraper {
+      padding-bottom: 21/9 * 100%;
+    }
+  }
+}
