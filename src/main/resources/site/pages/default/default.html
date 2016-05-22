@@ -36,7 +36,7 @@
     </div>
 </main>
 
-<footer class="page-footer" role="contentinfo">
+<footer class="page-footer" role="contentinfo" data-th-if="${showFooter}">
 
     <ul class="footer-some__items">
         <li data-th-each="socialMedia : ${footerSocial}" class="footer-some__item">
@@ -54,6 +54,8 @@
             </li>
         </ul>
     </nav>
+
+    <div data-th-if="${footerText}" data-th-utext="${footerText}"/>
 </footer>
 
 <script data-th-src="${portal.assetUrl({'_path=js/main.min.js'})}"></script>

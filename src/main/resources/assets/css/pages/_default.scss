@@ -77,3 +77,14 @@ main {
   }
 
 }
+
+.footer-nav__list{
+  @include unstyled-list;
+  text-align: center;
+}
+
+.footer-nav__item {
+  display: inline-block;
+  margin-left: 10px;
+  margin-right: 10px;
+}

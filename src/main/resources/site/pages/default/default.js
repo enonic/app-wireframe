@@ -25,15 +25,14 @@ function handleGet(req) {
         model.menuItems = libs.menu.getMenuTree(3);
         model.companyName = siteConfig.companyName;
 
-        libs.util.log(siteConfig);
-
         model.showFooterNav = siteConfig.footerNavigation ? true : false;
         model.footerSocial = libs.util.data.forceArray(siteConfig.footerSocial);
+        model.footerSocial = libs.util.data.trimArray(model.footerSocial);
+        model.footerText = siteConfig.footerText;
 
+        model.showFooter = model.showFooterNav || model.footerSocial.length > 0 || model.footerText;
 
         model.showSocialMediaLinksInFooter = showSocialMediaLinksInFooter();
-
-        //UTIL.log(app.name);
 
         return model;
     }
