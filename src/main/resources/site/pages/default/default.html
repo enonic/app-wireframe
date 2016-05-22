@@ -38,12 +38,6 @@
 
 <footer class="page-footer" role="contentinfo" data-th-if="${showFooter}">
 
-    <ul class="footer-some__items">
-        <li data-th-each="socialMedia : ${footerSocial}" class="footer-some__item">
-            <a href="#" class="footer-some__link" data-th-classappend="'footer-some__link--' + ${socialMedia}" data-th-text="${socialMedia}">Twitter</a>
-        </li>
-    </ul>
-
     <nav class="footer-nav" data-th-if="${showFooterNav}">
         <ul class="footer-nav__list">
             <li data-th-each="menuItem : ${menuItems}" class="footer-nav__item">
@@ -54,6 +48,17 @@
             </li>
         </ul>
     </nav>
+
+    <div class="footer-some">
+        <ul class="footer-some__items">
+            <li data-th-each="socialMedia : ${footerSocial}" class="footer-some__item">
+                <a href="#" class="footer-some__link" data-th-classappend="'footer-some__link--' + ${socialMedia}" data-th-text="${socialMedia}">Twitter</a>
+            </li>
+        </ul>
+    </div>
+
+
+
 
     <div data-th-if="${footerText}" data-th-utext="${footerText}"/>
 </footer>

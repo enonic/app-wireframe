@@ -38,6 +38,8 @@ main {
 }
 
 .footer-some {
+  margin-bottom: 30px;
+
   &__items {
     @include unstyled-list;
     text-align: center;
@@ -81,6 +83,7 @@ main {
 .footer-nav__list{
   @include unstyled-list;
   text-align: center;
+  margin-bottom: 30px;
 }
 
 .footer-nav__item {
