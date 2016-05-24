@@ -20,6 +20,7 @@
             <span class="site-nav__toggle-text">Menu</span>
         </button>
         <ul class="site-nav__list">
+            <li class="site-nav__item" data-th-if="${#lists.isEmpty(menuItems)}">Add some more pages to build the menu</li>
             <li data-th-each="menuItem : ${menuItems}" class="site-nav__item">
                 <a href="#" data-th-href="${portal.pageUrl({'_path=' + menuItem.path})}"
                    data-th-text="${menuItem.menuName} ?: ${menuItem.displayName}"

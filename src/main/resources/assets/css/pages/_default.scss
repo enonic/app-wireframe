@@ -17,11 +17,16 @@
     font-weight: bold;
     color: #000;
     @include font-size(26px);
+    position: relative;
     float: left;
+    z-index: 101;
+    
   }
 
   button {
     float: right;
+    position: relative;
+    z-index: 101;
   }
 
 
