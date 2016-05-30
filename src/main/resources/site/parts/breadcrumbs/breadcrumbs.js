@@ -18,12 +18,6 @@ function handleGet(req) {
 
         model.breadcrumbTrail = getBreadcrumbTrail();
 
-        //libs.util.log(breadcrumbTrail);
-
-        //libs.util.log(site);
-        //libs.util.log(content);
-
-
         return model;
     }
 
@@ -32,13 +26,9 @@ function handleGet(req) {
     function getBreadcrumbTrail() {
         var content = libs.portal.getContent();
 
-        libs.util.log(content);
-
         // Remove leading slash
         var fullPath = content._path.replace(/^\/|\/$/g, '');
         var pathArray = fullPath.split('/');
-
-        //libs.util.log(pathArray);
 
         var breadCrumbTrail = [];
 
@@ -46,13 +36,8 @@ function handleGet(req) {
 
             var currentPath = '/' + pathArray.slice(0, i).join('/');
 
-            libs.util.log(currentPath);
-
             breadCrumbTrail.push(getBreadcrumb(currentPath))
         }
-
-        //libs.util.log(breadCrumbTrail);
-
 
         return breadCrumbTrail;
 
@@ -60,15 +45,9 @@ function handleGet(req) {
     }
 
     function getBreadcrumb(path) {
-        var breadcrumb = {};
         var result = libs.content.get({
             key: path
         });
-
-        if (result) {
-            //breadcrumb.path = null;
-            //libs.util.log(result);
-        }
 
         return result;
 

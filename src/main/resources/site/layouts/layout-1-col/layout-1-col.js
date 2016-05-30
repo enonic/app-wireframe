@@ -18,7 +18,6 @@ function handleGet(req) {
         model.fullWidth = component.config.fullWidth ? true : false;
         model.regions = libs.util.region.get();
 
-        libs.util.log(model);
         return model;
     }
 
