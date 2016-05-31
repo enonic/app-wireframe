@@ -63,6 +63,8 @@
 
   &__nav {
     width: 100%;
+    position: absolute;
+    bottom: 2%;
     text-align: center;
     @include unstyled-list;
     padding: 10px 0;
