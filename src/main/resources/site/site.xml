@@ -44,4 +44,12 @@
     </field-set>
 
       </config>
+
+  <mappings>
+    <mapping controller="/site/pages/default/default.js">
+      <match>type:'portal:fragment'</match>
+      <pattern invert="true">.*\/_\/.*</pattern>
+    </mapping>
+  </mappings>
+
 </site>

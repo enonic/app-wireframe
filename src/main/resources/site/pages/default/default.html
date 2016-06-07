@@ -31,11 +31,16 @@
     </nav>
 </header>
 
-<main role="main" id="main" data-th-attr="data-portal-region=${mainRegion.name}">
+
+<main data-th-if="${mainRegion}" role="main" id="main" data-th-attr="data-portal-region=${mainRegion.name}">
     <div data-th-each="component : ${mainRegion.components}" data-th-remove="tag">
         <div data-portal-component="${component.path}" data-th-remove="tag"></div>
     </div>
 </main>
+
+<div data-th-if="${isFragment}" data-th-remove="tag">
+    <div data-portal-component="fragment" data-th-remove="tag"/>
+</div>
 
 <footer class="page-footer" role="contentinfo" data-th-if="${showFooter}">
 

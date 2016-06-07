@@ -12,12 +12,14 @@ function handleGet(req) {
     var siteConfig = libs.portal.getSiteConfig();
     var site = libs.portal.getSite();
     var content = libs.portal.getContent();
+    var isFragment = content.type === 'portal:fragment';
     var view = resolve('default.html');
     var model = createModel();
 
     function createModel() {
         var model = {};
-        model.mainRegion = content.page.regions['main'];
+        model.mainRegion = isFragment ? null : content.page.regions['main'];
+        model.isFragment = isFragment;
         model.sitePath = site['_path'];
         model.currentPath = content._path;
         model.pageTitle = getPageTitle();
