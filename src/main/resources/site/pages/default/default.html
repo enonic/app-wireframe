@@ -12,62 +12,68 @@
 </head>
 <body data-portal-component-type="page">
 
-<header class="page-header" role="banner">
-    <a data-th-href="${portal.pageUrl({'_path=' + sitePath})}" class="page-header__logo" data-th-text="${companyName}"/>
 
-    <nav class="site-nav nav" aria-expanded="false" aria-labelledby="toggle-menu" role="navigation">
-        <button class="site-nav__toggle-button">
-            <span class="site-nav__toggle-text">Menu</span>
-        </button>
-        <ul class="site-nav__list">
-            <li class="site-nav__item" data-th-if="${#lists.isEmpty(menuItems)}">Add some more pages to build the menu</li>
-            <li data-th-each="menuItem : ${menuItems}" class="site-nav__item">
-                <a href="#" data-th-href="${portal.pageUrl({'_path=' + menuItem.path})}"
-                   data-th-text="${menuItem.menuName} ?: ${menuItem.displayName}"
-                   data-th-classappend="${menuItem.path == currentPath ? 'site-nav__link--is-active' : ''}" class="site-nav__link">Page
-                    title</a>
-            </li>
-        </ul>
-    </nav>
-</header>
+<div data-th-if="${!isFragment}" data-th-remove="tag">
+
+    <header class="page-header" role="banner">
+        <a data-th-href="${portal.pageUrl({'_path=' + sitePath})}" class="page-header__logo" data-th-text="${companyName}"/>
+
+        <nav class="site-nav nav" aria-expanded="false" aria-labelledby="toggle-menu" role="navigation">
+            <button class="site-nav__toggle-button">
+                <span class="site-nav__toggle-text">Menu</span>
+            </button>
+            <ul class="site-nav__list">
+                <li class="site-nav__item" data-th-if="${#lists.isEmpty(menuItems)}">Add some more pages to build the menu</li>
+                <li data-th-each="menuItem : ${menuItems}" class="site-nav__item">
+                    <a href="#" data-th-href="${portal.pageUrl({'_path=' + menuItem.path})}"
+                       data-th-text="${menuItem.menuName} ?: ${menuItem.displayName}"
+                       data-th-classappend="${menuItem.path == currentPath ? 'site-nav__link--is-active' : ''}" class="site-nav__link">Page
+                        title</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
 
 
-<main data-th-if="${mainRegion}" role="main" id="main" data-th-attr="data-portal-region=${mainRegion.name}">
-    <div data-th-each="component : ${mainRegion.components}" data-th-remove="tag">
-        <div data-portal-component="${component.path}" data-th-remove="tag"></div>
-    </div>
-</main>
+    <main data-th-if="${mainRegion}" role="main" id="main" data-th-attr="data-portal-region=${mainRegion.name}">
+        <div data-th-each="component : ${mainRegion.components}" data-th-remove="tag">
+            <div data-portal-component="${component.path}" data-th-remove="tag"></div>
+        </div>
+    </main>
+
+
+
+    <footer class="page-footer" role="contentinfo" data-th-if="${showFooter}">
+
+        <nav class="footer-nav" data-th-if="${showFooterNav}">
+            <ul class="footer-nav__list">
+                <li data-th-each="menuItem : ${menuItems}" class="footer-nav__item">
+                    <a href="#" data-th-href="${portal.pageUrl({'_path=' + menuItem.path})}"
+                       data-th-text="${menuItem.menuName} ?: ${menuItem.displayName}"
+                       data-th-classappend="${menuItem.path == currentPath ? 'footer-nav__link--is-active' : ''}" class="footer-nav__link">Page
+                        title</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="footer-some">
+            <ul class="footer-some__items">
+                <li data-th-each="socialMedia : ${footerSocial}" class="footer-some__item">
+                    <a href="#" class="footer-some__link" data-th-classappend="'footer-some__link--' + ${socialMedia}" data-th-text="${socialMedia}">Twitter</a>
+                </li>
+            </ul>
+        </div>
+
+
+
+
+        <div data-th-if="${footerText}" data-th-utext="${footerText}"/>
+    </footer>
+</div>
 
 <div data-th-if="${isFragment}" data-th-remove="tag">
     <div data-portal-component="fragment" data-th-remove="tag"/>
 </div>
-
-<footer class="page-footer" role="contentinfo" data-th-if="${showFooter}">
-
-    <nav class="footer-nav" data-th-if="${showFooterNav}">
-        <ul class="footer-nav__list">
-            <li data-th-each="menuItem : ${menuItems}" class="footer-nav__item">
-                <a href="#" data-th-href="${portal.pageUrl({'_path=' + menuItem.path})}"
-                   data-th-text="${menuItem.menuName} ?: ${menuItem.displayName}"
-                   data-th-classappend="${menuItem.path == currentPath ? 'footer-nav__link--is-active' : ''}" class="footer-nav__link">Page
-                    title</a>
-            </li>
-        </ul>
-    </nav>
-
-    <div class="footer-some">
-        <ul class="footer-some__items">
-            <li data-th-each="socialMedia : ${footerSocial}" class="footer-some__item">
-                <a href="#" class="footer-some__link" data-th-classappend="'footer-some__link--' + ${socialMedia}" data-th-text="${socialMedia}">Twitter</a>
-            </li>
-        </ul>
-    </div>
-
-
-
-
-    <div data-th-if="${footerText}" data-th-utext="${footerText}"/>
-</footer>
 
 <script data-th-src="${portal.assetUrl({'_path=js/main.min.js'})}"></script>
 
