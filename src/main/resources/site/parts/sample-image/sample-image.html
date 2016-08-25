@@ -2,9 +2,7 @@
     <h2 data-th-if="${label}" data-th-text="${label}"></h2>
 
     <a data-th-href="${linkUrl}" data-th-remove="${linkUrl} ? none : tag">
-        <div class="sample-image__image" data-th-classappend="'sample-image__image--' + ${aspectRatio}">
-            <!--<img class="sample-image__image-x" data-th-src="${portal.assetUrl({'_path=img/parts/sample-image/sample-image__x.svg'})}"/>-->
-        </div>
+        <div class="sample-image__image" data-th-classappend="'sample-image__image--' + ${aspectRatio}"></div>
     </a>
 
 
