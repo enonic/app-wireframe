@@ -2,9 +2,15 @@
     <id>41c7fc79-7d4f-4bfb-8a5d-7d38ee3cb22a</id>
     <childOrder>modifiedtime DESC</childOrder>
     <nodeType>content</nodeType>
-    <timestamp>2016-08-24T17:16:42.992Z</timestamp>
+    <timestamp>2016-08-25T17:56:02.671Z</timestamp>
     <inheritPermissions>true</inheritPermissions>
     <permissions>
+        <principal key="role:cms.cm.app">
+            <allow type="array">
+                <value>READ</value>
+            </allow>
+            <deny type="array"/>
+        </principal>
         <principal key="role:system.admin">
             <allow type="array">
                 <value>READ</value>
@@ -26,6 +32,12 @@
                 <value>PUBLISH</value>
                 <value>READ_PERMISSIONS</value>
                 <value>WRITE_PERMISSIONS</value>
+            </allow>
+            <deny type="array"/>
+        </principal>
+        <principal key="role:system.everyone">
+            <allow type="array">
+                <value>READ</value>
             </allow>
             <deny type="array"/>
         </principal>

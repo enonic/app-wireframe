@@ -1,10 +1,16 @@
 <node>
-    <id>7486355b-146c-4a40-92d8-802b2b98ec8b</id>
+    <id>97d3af1d-22cf-4716-93e2-509fc58640be</id>
     <childOrder>displayname ASC</childOrder>
     <nodeType>default</nodeType>
-    <timestamp>2015-09-07T09:14:01.871Z</timestamp>
+    <timestamp>2016-08-25T17:55:59.779Z</timestamp>
     <inheritPermissions>false</inheritPermissions>
     <permissions>
+        <principal key="role:cms.cm.app">
+            <allow type="array">
+                <value>READ</value>
+            </allow>
+            <deny type="array"/>
+        </principal>
         <principal key="role:system.admin">
             <allow type="array">
                 <value>READ</value>
@@ -36,7 +42,7 @@
         <property-set name="data"/>
         <property-set name="form"/>
         <string name="creator">user:system:su</string>
-        <dateTime name="createdTime">2015-09-07T09:14:01.868Z</dateTime>
+        <dateTime name="createdTime">2016-08-25T17:55:59.776Z</dateTime>
     </data>
     <indexConfigs>
         <defaultConfig>
