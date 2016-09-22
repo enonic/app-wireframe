@@ -1,13 +1,18 @@
 <div class="sample-video">
-    <h2 data-th-if="${label}" data-th-text="${label}"></h2>
-    <div class="sample-video__player" data-th-classappend="'sample-video__player--' + ${aspectRatio}">
-        <button class="sample-video__play"></button>
+    <a data-th-href="${linkUrl}" data-th-remove="${linkUrl} ? none : tag">
+        <div class="sample-video__wrapper">
+            <h2 class="sample-video__label" data-th-if="${label}" data-th-text="${label}"></h2>
 
-        <div class="sample-video__ctrl">
-            <div class="sample-video__ctrl-play"></div>
-            <div class="sample-video__ctrl-progress"></div>
-            <div class="sample-video__ctrl-sound"></div>
-            <div class="sample-video__ctrl-expand"></div>
+            <div class="sample-video__player" data-th-classappend="'sample-video__player--' + ${aspectRatio}">
+                <button class="sample-video__play"></button>
+
+                <div class="sample-video__ctrl">
+                    <div class="sample-video__ctrl-play"></div>
+                    <div class="sample-video__ctrl-progress"></div>
+                    <div class="sample-video__ctrl-sound"></div>
+                    <div class="sample-video__ctrl-expand"></div>
+                </div>
+            </div>
         </div>
-    </div>
+    </a>
 </div>

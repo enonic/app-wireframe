@@ -1,0 +1,21 @@
+<div class="sample-form">
+    <div class="sample-form__wrapper">
+        <p data-th-if="${#lists.isEmpty(formRows)} and ${editMode}">Form not configured</p>
+        <form class="sample-form__form" method="post" action="#">
+            <div>
+                <label class="sample-form__label" data-th-each="formRow : ${formRows}">
+                    <span class="sample-form__label-text" data-th-text="${formRow.label}"></span>
+                    <input class="sample-form__input" type="text" data-th-if="${formRow.input == 'text'}"/>
+                    <textarea class="sample-form__textarea" data-th-if="${formRow.input == 'textarea'}"></textarea>
+                    <input class="sample-form__input" type="checkbox" data-th-if="${formRow.input == 'checkbox'}"/>
+                    <select class="sample-form__select" data-th-if="${formRow.input == 'dropdown'}">
+                        <option>Option 1</option>
+                        <option>Option 2</option>
+                        <option>Option 3</option>
+                    </select>
+                </label>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>

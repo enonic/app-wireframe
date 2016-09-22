@@ -1,0 +1,16 @@
+.sample-form {
+
+  &__label {
+    display: block;
+    margin-bottom: 1em;
+  }
+
+  &__label-text,
+  &__input,
+  &__textarea,
+  &__select {
+    display: block;
+    max-width: 100%;
+  }
+
+}

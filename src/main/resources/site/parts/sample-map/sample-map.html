@@ -1,6 +1,8 @@
 <div class="sample-map">
-    <h2 data-th-if="${label}" data-th-text="${label}"></h2>
     <a data-th-href="${linkUrl}" data-th-remove="${linkUrl} ? none : tag">
-        <div class="sample-map__map" data-th-classappend="'sample-map__map--' + ${aspectRatio}"></div>
+        <div class="sample-map__wrapper">
+            <h2 class="sample-map__label" data-th-if="${label}" data-th-text="${label}"></h2>
+            <div class="sample-map__map" data-th-classappend="'sample-map__map--' + ${aspectRatio}"></div>
+        </div>
     </a>
 </div>

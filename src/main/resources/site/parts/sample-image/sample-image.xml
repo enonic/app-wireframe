@@ -32,6 +32,7 @@
             <config>
                 <relationship-type>system:reference</relationship-type>
                 <allow-content-type>landing-page</allow-content-type>
+                <allowPath>${site}</allowPath>
             </config>
         </input>
     </config>

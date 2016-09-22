@@ -1,8 +1,11 @@
 <div class="sample-image">
-    <h2 data-th-if="${label}" data-th-text="${label}"></h2>
+
 
     <a data-th-href="${linkUrl}" data-th-remove="${linkUrl} ? none : tag">
-        <div class="sample-image__image" data-th-classappend="'sample-image__image--' + ${aspectRatio}"></div>
+        <div class="sample-image__wrapper">
+            <h2 class="sample-image__label" data-th-if="${label}" data-th-text="${label}"></h2>
+            <div class="sample-image__image" data-th-classappend="'sample-image__image--' + ${aspectRatio}"></div>
+        </div>
     </a>
 
 

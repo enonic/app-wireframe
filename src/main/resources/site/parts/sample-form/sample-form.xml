@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<part>
+    <display-name>Sample form</display-name>
+    <config>
+        <item-set name="formRow">
+            <label>Form row</label>
+            <items>
+                <input name="label" type="TextLine">
+                    <label>Label</label>
+                    <occurrences minimum="1" maximum="1"/>
+                </input>
+                <input name="input" type="ComboBox">
+                    <label>Input</label>
+                    <occurrences minimum="1" maximum="1"/>
+                    <config>
+                        <option value="text">Text</option>
+                        <option value="textarea">Textarea</option>
+                        <option value="dropdown">Dropdown</option>
+                        <option value="checkbox">Checkbox</option>
+                    </config>
+                    <default>text</default>
+                </input>
+            </items>
+            <occurrences minimum="0" maximum="0"/>
+        </item-set>
+    </config>
+</part>
