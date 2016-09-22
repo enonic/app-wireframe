@@ -2,7 +2,7 @@
     <id>4cbe1e43-8d29-4667-9d7d-a518d895ac35</id>
     <childOrder>modifiedtime DESC</childOrder>
     <nodeType>content</nodeType>
-    <timestamp>2016-08-25T17:56:02.684Z</timestamp>
+    <timestamp>2016-09-22T15:00:19.753Z</timestamp>
     <inheritPermissions>true</inheritPermissions>
     <permissions>
         <principal key="role:cms.cm.app">
@@ -47,7 +47,7 @@
         <string name="displayName">Contact us</string>
         <string name="type">com.enonic.app.wireframe:landing-page</string>
         <string name="owner">user:system:su</string>
-        <dateTime name="modifiedTime">2016-08-24T07:46:17.728Z</dateTime>
+        <dateTime name="modifiedTime">2016-09-22T15:00:19.752Z</dateTime>
         <string name="modifier">user:system:su</string>
         <string name="creator">user:system:su</string>
         <dateTime name="createdTime">2016-08-23T07:52:59.285Z</dateTime>
@@ -129,6 +129,30 @@
                         </property-set>
                         <property-set name="region">
                             <string name="name">right</string>
+                            <property-set name="component">
+                                <string name="type">TextComponent</string>
+                                <property-set name="TextComponent">
+                                    <string name="name">Text</string>
+                                    <string name="text">&lt;h3&gt;Send us an email&lt;/h3&gt;</string>
+                                </property-set>
+                            </property-set>
+                            <property-set name="component">
+                                <string name="type">PartComponent</string>
+                                <property-set name="PartComponent">
+                                    <string name="name">Sample form</string>
+                                    <string name="template">com.enonic.app.wireframe:sample-form</string>
+                                    <property-set name="config">
+                                    <property-set name="formRow">
+                                    <string name="label">Your email:</string>
+                                    <string name="input">text</string>
+                                    </property-set>
+                                    <property-set name="formRow">
+                                    <string name="label">Message</string>
+                                    <string name="input">textarea</string>
+                                    </property-set>
+                                    </property-set>
+                                </property-set>
+                            </property-set>
                             <property-set name="component">
                                 <string name="type">TextComponent</string>
                                 <property-set name="TextComponent">

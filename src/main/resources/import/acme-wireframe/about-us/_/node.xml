@@ -2,7 +2,7 @@
     <id>41c7fc79-7d4f-4bfb-8a5d-7d38ee3cb22a</id>
     <childOrder>modifiedtime DESC</childOrder>
     <nodeType>content</nodeType>
-    <timestamp>2016-08-25T17:56:02.671Z</timestamp>
+    <timestamp>2016-09-22T14:44:57.240Z</timestamp>
     <inheritPermissions>true</inheritPermissions>
     <permissions>
         <principal key="role:cms.cm.app">
@@ -47,7 +47,7 @@
         <string name="displayName">About us</string>
         <string name="type">com.enonic.app.wireframe:landing-page</string>
         <string name="owner">user:system:su</string>
-        <dateTime name="modifiedTime">2016-08-24T17:16:42.991Z</dateTime>
+        <dateTime name="modifiedTime">2016-09-22T14:44:57.239Z</dateTime>
         <string name="modifier">user:system:su</string>
         <string name="creator">user:system:su</string>
         <dateTime name="createdTime">2016-08-23T07:56:20.978Z</dateTime>
@@ -113,6 +113,7 @@
                                     <property-set name="config">
                                     <string isNull="true" name="label"/>
                                     <string name="aspectRatio">widescreen</string>
+                                    <reference name="linkedPage">1817fa93-23b9-4f09-8bf1-9eea090c9278</reference>
                                     </property-set>
                                 </property-set>
                             </property-set>

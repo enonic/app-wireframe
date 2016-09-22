@@ -2,7 +2,7 @@
     <id>d53cda50-9a0c-42d3-8594-cc1d5575b2a3</id>
     <childOrder>modifiedtime DESC</childOrder>
     <nodeType>content</nodeType>
-    <timestamp>2016-08-25T18:01:50.684Z</timestamp>
+    <timestamp>2016-09-22T14:41:27.136Z</timestamp>
     <inheritPermissions>false</inheritPermissions>
     <permissions>
         <principal key="role:cms.cm.app">
@@ -47,7 +47,7 @@
         <string name="displayName">ACME Wireframe</string>
         <string name="type">portal:site</string>
         <string name="owner">user:system:su</string>
-        <dateTime name="modifiedTime">2016-08-25T18:01:50.684Z</dateTime>
+        <dateTime name="modifiedTime">2016-09-22T14:41:27.135Z</dateTime>
         <string name="modifier">user:system:su</string>
         <string name="creator">user:system:su</string>
         <dateTime name="createdTime">2016-08-23T07:51:56.729Z</dateTime>
@@ -87,8 +87,9 @@
                                     <string name="name">Sample gallery</string>
                                     <string name="template">com.enonic.app.wireframe:sample-gallery</string>
                                     <property-set name="config">
-                                    <string isNull="true" name="label"/>
+                                    <string name="label">Frontpage carousel</string>
                                     <string name="aspectRatio">cinema</string>
+                                    <reference name="linkedPage">41c7fc79-7d4f-4bfb-8a5d-7d38ee3cb22a</reference>
                                     </property-set>
                                 </property-set>
                             </property-set>
