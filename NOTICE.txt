@@ -3,3 +3,7 @@ This software includes the following third party software:
 include-media sass library
 http://include-media.com
 MIT license
+
+Cabin Sketch font
+http://www.impallari.com
+SIL OPEN FONT license

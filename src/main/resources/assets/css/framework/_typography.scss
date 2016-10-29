@@ -2,7 +2,19 @@
 // Typography
 //#################################################
 
-@import url('http://fonts.googleapis.com/css?family=Cabin+Sketch');
+@font-face {
+  font-family: 'CabinSketch';
+  src: url('../fonts/cabinsketch-bold.woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Cabin Sketch';
+  src: url('../fonts/cabinsketch-regular.woff');
+  font-weight: normal;
+  font-style: normal;
+}
 
 html {
   font-family: 'Cabin Sketch', cursive;
