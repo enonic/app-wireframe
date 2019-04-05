@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <layout>
   <display-name>1 column</display-name>
-  <config>
+  <form>
     <input name="fullWidth" type="CheckBox">
       <label>Full width</label>
       <occurrences minimum="0" maximum="1"/>
     </input>
-  </config>
+  </form>
   <regions>
     <region name="center"/>
   </regions>

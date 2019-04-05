@@ -7,7 +7,7 @@
     <name>Enonic AS</name>
     <url>http://www.enonic.com</url>
   </vendor>
-  <config>
+  <form>
     <field-set name="company">
       <label>Company</label>
       <items>
@@ -43,7 +43,7 @@
       </items>
     </field-set>
 
-      </config>
+      </form>
 
   <mappings>
     <mapping controller="/site/pages/default/default.js">

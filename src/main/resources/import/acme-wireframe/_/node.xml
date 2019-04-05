@@ -2,7 +2,7 @@
     <id>d53cda50-9a0c-42d3-8594-cc1d5575b2a3</id>
     <childOrder>modifiedtime DESC</childOrder>
     <nodeType>content</nodeType>
-    <timestamp>2016-09-22T14:41:27.136Z</timestamp>
+    <timestamp>2019-04-03T09:09:16.972Z</timestamp>
     <inheritPermissions>false</inheritPermissions>
     <permissions>
         <principal key="role:cms.cm.app">
@@ -47,8 +47,8 @@
         <string name="displayName">ACME Wireframe</string>
         <string name="type">portal:site</string>
         <string name="owner">user:system:su</string>
-        <dateTime name="modifiedTime">2016-09-22T14:41:27.135Z</dateTime>
-        <string name="modifier">user:system:su</string>
+        <dateTime name="modifiedTime">2019-04-03T09:09:16.952Z</dateTime>
+        <string name="modifier">user:system:anonymous</string>
         <string name="creator">user:system:su</string>
         <dateTime name="createdTime">2016-08-23T07:51:56.729Z</dateTime>
         <property-set name="data">
@@ -66,148 +66,160 @@
                 </property-set>
             </property-set>
         </property-set>
-        <property-set name="page">
-            <string isNull="true" name="controller"/>
-            <reference name="template">891c6d55-93aa-425a-97f6-141212a0a986</reference>
-            <property-set name="region">
-                <string name="name">main</string>
-                <property-set name="component">
-                    <string name="type">LayoutComponent</string>
-                    <property-set name="LayoutComponent">
-                        <string name="name">1 column</string>
-                        <string name="template">com.enonic.app.wireframe:layout-1-col</string>
-                        <property-set name="config">
+        <property-set name="components">
+            <string name="type">page</string>
+            <string name="path">/</string>
+            <property-set name="page">
+                <string name="descriptor">com.enonic.app.wireframe:default</string>
+                <boolean name="customized">true</boolean>
+            </property-set>
+        </property-set>
+        <property-set name="components">
+            <string name="type">layout</string>
+            <string name="path">/main/0</string>
+            <property-set name="layout">
+                <string name="descriptor">com.enonic.app.wireframe:layout-1-col</string>
+                <property-set name="config">
+                    <property-set name="com-enonic-app-wireframe">
+                        <property-set name="layout-1-col">
                             <boolean name="fullWidth">false</boolean>
-                        </property-set>
-                        <property-set name="region">
-                            <string name="name">center</string>
-                            <property-set name="component">
-                                <string name="type">PartComponent</string>
-                                <property-set name="PartComponent">
-                                    <string name="name">Sample gallery</string>
-                                    <string name="template">com.enonic.app.wireframe:sample-gallery</string>
-                                    <property-set name="config">
-                                    <string name="label">Frontpage carousel</string>
-                                    <string name="aspectRatio">cinema</string>
-                                    <reference name="linkedPage">41c7fc79-7d4f-4bfb-8a5d-7d38ee3cb22a</reference>
-                                    </property-set>
-                                </property-set>
-                            </property-set>
-                            <property-set name="component">
-                                <string name="type">TextComponent</string>
-                                <property-set name="TextComponent">
-                                    <string name="name">Text</string>
-                                    <string name="text">&lt;h1&gt;A big title&lt;/h1&gt;
-&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc a sapien nec nisi faucibus pharetra at et orci. Vestibulum aliquam libero non volutpat egestas. Mauris quam felis, semper vitae tincidunt ac, sodales at quam. Proin at vulputate orci. Aenean malesuada ipsum at eros semper, non elementum risus viverra. Morbi posuere, urna eget luctus malesuada, ligula nunc posuere metus, vel imperdiet magna elit a orci. Duis tincidunt ex magna, in suscipit purus efficitur id. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam rutrum tristique lacus in efficitur. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque tempus pulvinar scelerisque. Pellentesque non sollicitudin libero.&lt;/p&gt;</string>
-                                </property-set>
-                            </property-set>
-                        </property-set>
-                    </property-set>
-                </property-set>
-                <property-set name="component">
-                    <string name="type">LayoutComponent</string>
-                    <property-set name="LayoutComponent">
-                        <string name="name">4 columns</string>
-                        <string name="template">com.enonic.app.wireframe:layout-4-col</string>
-                        <property-set name="config">
-                            <boolean name="fullWidth">false</boolean>
-                        </property-set>
-                        <property-set name="region">
-                            <string name="name">left</string>
-                            <property-set name="component">
-                                <string name="type">PartComponent</string>
-                                <property-set name="PartComponent">
-                                    <string name="name">Sample image</string>
-                                    <string name="template">com.enonic.app.wireframe:sample-image</string>
-                                    <property-set name="config">
-                                    <string isNull="true" name="label"/>
-                                    <string isNull="true" name="caption"/>
-                                    <string name="aspectRatio">widescreen</string>
-                                    </property-set>
-                                </property-set>
-                            </property-set>
-                            <property-set name="component">
-                                <string name="type">TextComponent</string>
-                                <property-set name="TextComponent">
-                                    <string name="name">Text</string>
-                                    <string name="text">&lt;p&gt;Item title&lt;br /&gt;Item category&lt;br /&gt;$9.99&lt;/p&gt;</string>
-                                </property-set>
-                            </property-set>
-                        </property-set>
-                        <property-set name="region">
-                            <string name="name">middle</string>
-                            <property-set name="component">
-                                <string name="type">PartComponent</string>
-                                <property-set name="PartComponent">
-                                    <string name="name">Sample image</string>
-                                    <string name="template">com.enonic.app.wireframe:sample-image</string>
-                                    <property-set name="config">
-                                    <string isNull="true" name="label"/>
-                                    <string isNull="true" name="caption"/>
-                                    <string name="aspectRatio">widescreen</string>
-                                    </property-set>
-                                </property-set>
-                            </property-set>
-                            <property-set name="component">
-                                <string name="type">TextComponent</string>
-                                <property-set name="TextComponent">
-                                    <string name="name">Text</string>
-                                    <string name="text">&lt;p&gt;Item title&lt;br /&gt;Item category&lt;br /&gt;$9.99&lt;/p&gt;</string>
-                                </property-set>
-                            </property-set>
-                        </property-set>
-                        <property-set name="region">
-                            <string name="name">right</string>
-                            <property-set name="component">
-                                <string name="type">PartComponent</string>
-                                <property-set name="PartComponent">
-                                    <string name="name">Sample image</string>
-                                    <string name="template">com.enonic.app.wireframe:sample-image</string>
-                                    <property-set name="config">
-                                    <string isNull="true" name="label"/>
-                                    <string isNull="true" name="caption"/>
-                                    <string name="aspectRatio">widescreen</string>
-                                    </property-set>
-                                </property-set>
-                            </property-set>
-                            <property-set name="component">
-                                <string name="type">TextComponent</string>
-                                <property-set name="TextComponent">
-                                    <string name="name">Text</string>
-                                    <string name="text">&lt;p&gt;Item title&lt;br /&gt;Item category&lt;br /&gt;$9.99&lt;/p&gt;</string>
-                                </property-set>
-                            </property-set>
-                        </property-set>
-                        <property-set name="region">
-                            <string name="name">rightmost</string>
-                            <property-set name="component">
-                                <string name="type">PartComponent</string>
-                                <property-set name="PartComponent">
-                                    <string name="name">Sample image</string>
-                                    <string name="template">com.enonic.app.wireframe:sample-image</string>
-                                    <property-set name="config">
-                                    <string isNull="true" name="label"/>
-                                    <string isNull="true" name="caption"/>
-                                    <string name="aspectRatio">widescreen</string>
-                                    </property-set>
-                                </property-set>
-                            </property-set>
-                            <property-set name="component">
-                                <string name="type">TextComponent</string>
-                                <property-set name="TextComponent">
-                                    <string name="name">Text</string>
-                                    <string name="text">&lt;p&gt;Item title&lt;br /&gt;Item category&lt;br /&gt;$9.99&lt;/p&gt;</string>
-                                </property-set>
-                            </property-set>
                         </property-set>
                     </property-set>
                 </property-set>
             </property-set>
-            <boolean name="customized">false</boolean>
+        </property-set>
+        <property-set name="components">
+            <string name="type">part</string>
+            <string name="path">/main/0/center/0</string>
+            <property-set name="part">
+                <string name="descriptor">com.enonic.app.wireframe:sample-gallery</string>
+                <property-set name="config">
+                    <property-set name="com-enonic-app-wireframe">
+                        <property-set name="sample-gallery">
+                            <string name="label">Frontpage carousel</string>
+                            <string name="aspectRatio">cinema</string>
+                            <reference name="linkedPage">41c7fc79-7d4f-4bfb-8a5d-7d38ee3cb22a</reference>
+                        </property-set>
+                    </property-set>
+                </property-set>
+            </property-set>
+        </property-set>
+        <property-set name="components">
+            <string name="type">text</string>
+            <string name="path">/main/0/center/1</string>
+            <property-set name="text">
+                <string name="value">&lt;h1&gt;A big title&lt;/h1&gt;
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc a sapien nec nisi faucibus pharetra at et orci. Vestibulum aliquam libero non volutpat egestas. Mauris quam felis, semper vitae tincidunt ac, sodales at quam. Proin at vulputate orci. Aenean malesuada ipsum at eros semper, non elementum risus viverra. Morbi posuere, urna eget luctus malesuada, ligula nunc posuere metus, vel imperdiet magna elit a orci. Duis tincidunt ex magna, in suscipit purus efficitur id. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam rutrum tristique lacus in efficitur. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque tempus pulvinar scelerisque. Pellentesque non sollicitudin libero.&lt;/p&gt;</string>
+            </property-set>
+        </property-set>
+        <property-set name="components">
+            <string name="type">layout</string>
+            <string name="path">/main/1</string>
+            <property-set name="layout">
+                <string name="descriptor">com.enonic.app.wireframe:layout-4-col</string>
+                <property-set name="config">
+                    <property-set name="com-enonic-app-wireframe">
+                        <property-set name="layout-4-col">
+                            <boolean name="fullWidth">false</boolean>
+                        </property-set>
+                    </property-set>
+                </property-set>
+            </property-set>
+        </property-set>
+        <property-set name="components">
+            <string name="type">part</string>
+            <string name="path">/main/1/left/0</string>
+            <property-set name="part">
+                <string name="descriptor">com.enonic.app.wireframe:sample-image</string>
+                <property-set name="config">
+                    <property-set name="com-enonic-app-wireframe">
+                        <property-set name="sample-image">
+                            <string isNull="true" name="label"/>
+                            <string isNull="true" name="caption"/>
+                            <string name="aspectRatio">widescreen</string>
+                        </property-set>
+                    </property-set>
+                </property-set>
+            </property-set>
+        </property-set>
+        <property-set name="components">
+            <string name="type">text</string>
+            <string name="path">/main/1/left/1</string>
+            <property-set name="text">
+                <string name="value">&lt;p&gt;Item title&lt;br /&gt;Item category&lt;br /&gt;$9.99&lt;/p&gt;</string>
+            </property-set>
+        </property-set>
+        <property-set name="components">
+            <string name="type">part</string>
+            <string name="path">/main/1/middle/0</string>
+            <property-set name="part">
+                <string name="descriptor">com.enonic.app.wireframe:sample-image</string>
+                <property-set name="config">
+                    <property-set name="com-enonic-app-wireframe">
+                        <property-set name="sample-image">
+                            <string isNull="true" name="label"/>
+                            <string isNull="true" name="caption"/>
+                            <string name="aspectRatio">widescreen</string>
+                        </property-set>
+                    </property-set>
+                </property-set>
+            </property-set>
+        </property-set>
+        <property-set name="components">
+            <string name="type">text</string>
+            <string name="path">/main/1/middle/1</string>
+            <property-set name="text">
+                <string name="value">&lt;p&gt;Item title&lt;br /&gt;Item category&lt;br /&gt;$9.99&lt;/p&gt;</string>
+            </property-set>
+        </property-set>
+        <property-set name="components">
+            <string name="type">part</string>
+            <string name="path">/main/1/right/0</string>
+            <property-set name="part">
+                <string name="descriptor">com.enonic.app.wireframe:sample-image</string>
+                <property-set name="config">
+                    <property-set name="com-enonic-app-wireframe">
+                        <property-set name="sample-image">
+                            <string isNull="true" name="label"/>
+                            <string isNull="true" name="caption"/>
+                            <string name="aspectRatio">widescreen</string>
+                        </property-set>
+                    </property-set>
+                </property-set>
+            </property-set>
+        </property-set>
+        <property-set name="components">
+            <string name="type">text</string>
+            <string name="path">/main/1/right/1</string>
+            <property-set name="text">
+                <string name="value">&lt;p&gt;Item title&lt;br /&gt;Item category&lt;br /&gt;$9.99&lt;/p&gt;</string>
+            </property-set>
+        </property-set>
+        <property-set name="components">
+            <string name="type">part</string>
+            <string name="path">/main/1/rightmost/0</string>
+            <property-set name="part">
+                <string name="descriptor">com.enonic.app.wireframe:sample-image</string>
+                <property-set name="config">
+                    <property-set name="com-enonic-app-wireframe">
+                        <property-set name="sample-image">
+                            <string isNull="true" name="label"/>
+                            <string isNull="true" name="caption"/>
+                            <string name="aspectRatio">widescreen</string>
+                        </property-set>
+                    </property-set>
+                </property-set>
+            </property-set>
+        </property-set>
+        <property-set name="components">
+            <string name="type">text</string>
+            <string name="path">/main/1/rightmost/1</string>
+            <property-set name="text">
+                <string name="value">&lt;p&gt;Item title&lt;br /&gt;Item category&lt;br /&gt;$9.99&lt;/p&gt;</string>
+            </property-set>
         </property-set>
     </data>
     <indexConfigs>
-        <analyzer>document_index_default</analyzer>
         <defaultConfig>
             <decideByType>true</decideByType>
             <enabled>true</enabled>
@@ -218,13 +230,169 @@
         <pathIndexConfigs>
             <pathIndexConfig>
                 <indexConfig>
+                    <decideByType>true</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>components.part.config.com-enonic-app-wireframe.sample-image.*</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>true</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>components.part.config.com-enonic-app-wireframe.sample-gallery.*</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>true</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>components.page.config.com-enonic-app-wireframe.default.*</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>true</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>components.layout.config.com-enonic-app-wireframe.layout-4-col.*</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>true</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>components.layout.config.com-enonic-app-wireframe.layout-1-col.*</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
                     <decideByType>false</decideByType>
                     <enabled>true</enabled>
                     <nGram>true</nGram>
                     <fulltext>true</fulltext>
                     <includeInAllText>true</includeInAllText>
+                    <indexValueProcessors>
+                        <indexValueProcessor>htmlStripper</indexValueProcessor>
+                    </indexValueProcessors>
                 </indexConfig>
-                <path>page.region.**.text</path>
+                <path>data.siteConfig.config.footerText</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>data.siteConfig.applicationkey</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>true</nGram>
+                    <fulltext>true</fulltext>
+                    <includeInAllText>true</includeInAllText>
+                    <indexValueProcessors>
+                        <indexValueProcessor>htmlStripper</indexValueProcessor>
+                    </indexValueProcessors>
+                </indexConfig>
+                <path>components.text.value</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>components.part.descriptor</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>components.page.template</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>components.page.descriptor</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>components.page.customized</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>components.layout.descriptor</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>components.image.id</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>components.fragment.id</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>true</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>x.*</path>
             </pathIndexConfig>
             <pathIndexConfig>
                 <indexConfig>
@@ -239,12 +407,62 @@
             <pathIndexConfig>
                 <indexConfig>
                     <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>type</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
                     <enabled>false</enabled>
                     <nGram>false</nGram>
                     <fulltext>false</fulltext>
                     <includeInAllText>false</includeInAllText>
                 </indexConfig>
-                <path>page.regions</path>
+                <path>site</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>owner</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>modifier</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>modifiedTime</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>true</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>data</path>
             </pathIndexConfig>
             <pathIndexConfig>
                 <indexConfig>
@@ -269,32 +487,12 @@
             <pathIndexConfig>
                 <indexConfig>
                     <decideByType>false</decideByType>
-                    <enabled>true</enabled>
+                    <enabled>false</enabled>
                     <nGram>false</nGram>
                     <fulltext>false</fulltext>
                     <includeInAllText>false</includeInAllText>
                 </indexConfig>
-                <path>modifiedTime</path>
-            </pathIndexConfig>
-            <pathIndexConfig>
-                <indexConfig>
-                    <decideByType>false</decideByType>
-                    <enabled>true</enabled>
-                    <nGram>false</nGram>
-                    <fulltext>false</fulltext>
-                    <includeInAllText>false</includeInAllText>
-                </indexConfig>
-                <path>modifier</path>
-            </pathIndexConfig>
-            <pathIndexConfig>
-                <indexConfig>
-                    <decideByType>false</decideByType>
-                    <enabled>true</enabled>
-                    <nGram>false</nGram>
-                    <fulltext>false</fulltext>
-                    <includeInAllText>false</includeInAllText>
-                </indexConfig>
-                <path>owner</path>
+                <path>components</path>
             </pathIndexConfig>
             <pathIndexConfig>
                 <indexConfig>
@@ -306,56 +504,7 @@
                 </indexConfig>
                 <path>attachment</path>
             </pathIndexConfig>
-            <pathIndexConfig>
-                <indexConfig>
-                    <decideByType>false</decideByType>
-                    <enabled>true</enabled>
-                    <nGram>false</nGram>
-                    <fulltext>false</fulltext>
-                    <includeInAllText>false</includeInAllText>
-                </indexConfig>
-                <path>x</path>
-            </pathIndexConfig>
-            <pathIndexConfig>
-                <indexConfig>
-                    <decideByType>false</decideByType>
-                    <enabled>false</enabled>
-                    <nGram>false</nGram>
-                    <fulltext>false</fulltext>
-                    <includeInAllText>false</includeInAllText>
-                </indexConfig>
-                <path>page</path>
-            </pathIndexConfig>
-            <pathIndexConfig>
-                <indexConfig>
-                    <decideByType>false</decideByType>
-                    <enabled>false</enabled>
-                    <nGram>false</nGram>
-                    <fulltext>false</fulltext>
-                    <includeInAllText>false</includeInAllText>
-                </indexConfig>
-                <path>site</path>
-            </pathIndexConfig>
-            <pathIndexConfig>
-                <indexConfig>
-                    <decideByType>false</decideByType>
-                    <enabled>true</enabled>
-                    <nGram>false</nGram>
-                    <fulltext>false</fulltext>
-                    <includeInAllText>false</includeInAllText>
-                </indexConfig>
-                <path>type</path>
-            </pathIndexConfig>
-            <pathIndexConfig>
-                <indexConfig>
-                    <decideByType>true</decideByType>
-                    <enabled>true</enabled>
-                    <nGram>false</nGram>
-                    <fulltext>false</fulltext>
-                    <includeInAllText>false</includeInAllText>
-                </indexConfig>
-                <path>data</path>
-            </pathIndexConfig>
         </pathIndexConfigs>
+        <allTextIndexConfig/>
     </indexConfigs>
 </node>
