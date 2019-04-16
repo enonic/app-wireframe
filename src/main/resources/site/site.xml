@@ -2,13 +2,13 @@
 <site>
   <display-name>Wireframe</display-name>
   <info>Wireframe App</info>
-  <url>http://enonic.com/</url>
+  <url>https://enonic.com/</url>
   <vendor>
     <name>Enonic AS</name>
-    <url>http://www.enonic.com</url>
+    <url>https://www.enonic.com</url>
   </vendor>
   <form>
-    <field-set name="company">
+    <field-set>
       <label>Company</label>
       <items>
         <input name="companyName" type="TextLine">
@@ -17,7 +17,7 @@
         </input>
       </items>
     </field-set>
-    <field-set name="footer">
+    <field-set>
       <label>Footer</label>
       <items>
         <input name="footerText" type="HtmlArea">
@@ -42,8 +42,7 @@
         </input>
       </items>
     </field-set>
-
-      </form>
+  </form>
 
   <mappings>
     <mapping controller="/site/pages/default/default.js">
