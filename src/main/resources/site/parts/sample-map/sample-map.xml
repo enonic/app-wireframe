@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <part>
     <display-name>Sample map</display-name>
-    <config>
+    <form>
         <input name="label" type="TextLine">
             <label>Label</label>
             <occurrences minimum="0" maximum="1"/>
@@ -31,5 +31,5 @@
                 <allowPath>${site}</allowPath>
             </config>
         </input>
-    </config>
+    </form>
 </part>

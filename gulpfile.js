@@ -34,8 +34,6 @@ var gulpWebpack = require('webpack-stream');
 var imagemin = require('gulp-imagemin');
 var pngquant = require('imagemin-pngquant'); // $ npm i -D imagemin-pngquant
 
-// Default task, runs all other tasks
-gulp.task('build', ['sass', 'jsHint', 'webpack', 'minifyImages', 'minifyHTML']);
 
 // Compile Sass files
 // Create CSS sourcemaps
@@ -90,3 +88,6 @@ gulp.task('webpack', function() {
         .pipe(gulpWebpack(require('./webpack.config.js')))
         .pipe(gulp.dest(buildAssets + '/js'));
 });
+
+// Default task, runs all other tasks
+gulp.task('build', gulp.series('sass', 'jsHint', 'webpack', 'minifyImages', 'minifyHTML'));

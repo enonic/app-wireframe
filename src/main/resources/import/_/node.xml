@@ -1,8 +1,8 @@
 <node>
-    <id>97d3af1d-22cf-4716-93e2-509fc58640be</id>
+    <id>788ca0a2-83f0-4aeb-bfba-6fe922cc3c65</id>
     <childOrder>displayname ASC</childOrder>
     <nodeType>default</nodeType>
-    <timestamp>2016-08-25T17:55:59.779Z</timestamp>
+    <timestamp>2019-04-03T09:09:16.685Z</timestamp>
     <inheritPermissions>false</inheritPermissions>
     <permissions>
         <principal key="role:cms.cm.app">
@@ -53,5 +53,6 @@
             <includeInAllText>false</includeInAllText>
         </defaultConfig>
         <pathIndexConfigs/>
+        <allTextIndexConfig/>
     </indexConfigs>
 </node>

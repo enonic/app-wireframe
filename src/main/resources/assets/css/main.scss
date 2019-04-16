@@ -3,35 +3,43 @@
 //#################################################
 
 // Base
-@import 'global/variables';
 //@import 'breakpoint';
 
-@import 'lib/placeholders/*';
-@import 'lib/mixins/*';
-@import 'lib/*';
+@import 'lib/normalize';
+@import 'lib/mixins/font-size';
+@import 'lib/mixins/include-media';
 
-@import 'global/mixins/*';
-@import 'global/*';
+@import 'global/mixins';
+@import 'global/variables';
 
-@import 'vendor/*';
-
-@import 'framework/structural';
-@import 'framework/typography';
-@import 'framework/images';
-@import 'framework/navigation';
 @import 'framework/buttons';
 @import 'framework/forms';
+@import 'framework/images';
 @import 'framework/lists';
+@import 'framework/navigation';
+@import 'framework/structural';
 @import 'framework/tables';
+@import 'framework/typography';
 
 // Pages
-@import 'pages/*';
+@import 'pages/default';
 
 // Layouts
-@import 'layouts/*';
+@import 'layouts/layout-1-col';
+@import 'layouts/layout-2-col';
+@import 'layouts/layout-3-col';
+@import 'layouts/layout-4-col';
 
 // Parts
-@import 'parts/*';
+@import 'parts/breadcrumbs';
+@import 'parts/sample-form';
+@import 'parts/sample-gallery';
+@import 'parts/sample-image';
+@import 'parts/sample-map';
+@import 'parts/sample-video';
+
+// Helpers
+@import 'helpers/placeholders';
 
 // Shame
 @import 'shame';
