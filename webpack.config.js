@@ -1,4 +1,5 @@
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
     output: {
@@ -6,5 +7,13 @@ module.exports = {
     },
     optimization: {
         minimizer: [new UglifyJsPlugin()]
-    }
+    },
+    plugins: [
+        new webpack.ProvidePlugin({
+            $: "jquery",
+            jQuery: "jquery",
+            "window.jQuery": "jquery"
+        })
+    ],
+    mode: 'production'
 };
