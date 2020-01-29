@@ -47,7 +47,7 @@
         $width: nth($widths, $i);
         &__region--#{$i} {
           @include media('>=medium') {
-            width: $width + '%';
+            width: $width + 0%;
           }
         }
       }
