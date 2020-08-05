@@ -5,7 +5,7 @@
     "gulp-htmlmin": "^5.0.1",
     "gulp-imagemin": "^5.0.3",
     "gulp-jshint": "^2.0.0",
-    "gulp-sass": "^4.0.2",
+    "gulp-sass": "^4.1.0",
     "gulp-sass-glob": "1.1.0",
     "gulp-sourcemaps": "^2.6.5",
     "imagemin-pngquant": "^7.0.0",
