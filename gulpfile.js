@@ -27,9 +27,6 @@ var htmlmin = require('gulp-htmlmin');
 
 var jshint = require('gulp-jshint');
 
-// Webpack
-var gulpWebpack = require('webpack-stream');
-
 // Image minification
 var imagemin = require('gulp-imagemin');
 var pngquant = require('imagemin-pngquant'); // $ npm i -D imagemin-pngquant
@@ -81,13 +78,5 @@ gulp.task('minifyHTML', function() {
         .pipe(gulp.dest(buildSite))
 });
 
-// Runs webpack module bundler
-gulp.task('webpack', function() {
-    return gulp
-        .src(srcAssets + '/js/main.js')
-        .pipe(gulpWebpack(require('./webpack.config.js')))
-        .pipe(gulp.dest(buildAssets + '/js'));
-});
-
 // Default task, runs all other tasks
-gulp.task('build', gulp.series('sass', 'jsHint', 'webpack', 'minifyImages', 'minifyHTML'));
+gulp.task('build', gulp.series(['sass', 'jsHint', 'minifyImages', 'minifyHTML']));

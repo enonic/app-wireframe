@@ -30,7 +30,7 @@ dependencies {
 
 node {
     version = '12.13.1'
-    download true
+    download = true
 }
 
 task buildGulp(type: NpmTask, dependsOn: npmInstall) {
@@ -40,4 +40,12 @@ task buildGulp(type: NpmTask, dependsOn: npmInstall) {
     outputs.dir("build")
 }
 
-jar.dependsOn buildGulp
+task webpack(type:NodeTask) {
+    script = file('node_modules/webpack-cli/bin/cli.js')
+    args = [
+            '--color',
+    ]
+}
+
+webpack.dependsOn buildGulp
+jar.dependsOn webpack
