@@ -9,6 +9,9 @@ Icon
 # Enonic cli
 .enonic
 
+# Editor
+.vscode
+
 # Thumbnails
 ._*
 
