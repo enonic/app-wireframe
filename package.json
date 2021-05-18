@@ -1,23 +1,24 @@
 {
   "name": "wireframe",
-  "scripts": {
-    "gulp": "gulp build"
-  },
   "devDependencies": {
-    "gulp": "^4.0.2",
-    "gulp-autoprefixer": "^7.0.1",
-    "gulp-cli": "^2.3.0",
-    "gulp-htmlmin": "^5.0.1",
-    "gulp-imagemin": "^7.1.0",
-    "gulp-jshint": "^2.1.0",
-    "gulp-sass": "^4.1.0",
-    "gulp-sass-glob": "^1.1.0",
-    "gulp-sourcemaps": "^3.0.0",
-    "imagemin-pngquant": "^9.0.2",
+    "copy-webpack-plugin": "^8.1.1",
+    "css-loader": "^5.2.4",
+    "file-loader": "^6.2.0",
+    "html-minifier-webpack-plugin": "^2.2.3",
+    "imagemin-webpack-plugin": "^2.4.2",
     "jquery": "^3.6.0",
     "jshint": "^2.12.0",
-    "terser-webpack-plugin": "^5.1.1",
-    "webpack": "^5.36.2",
-    "webpack-cli": "^4.6.0"
-  }
+    "mini-css-extract-plugin": "^1.6.0",
+    "node-sass-glob-importer": "^5.3.2",
+    "postcss-loader": "^5.3.0",
+    "postcss-preset-env": "^6.7.0",
+    "sass": "^1.32.13",
+    "sass-loader": "^11.1.1",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.37.0",
+    "webpack-cli": "^4.7.0"
+  },
+  "dependencies": {},
+  "private": true
 }
