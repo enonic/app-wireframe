@@ -29,15 +29,8 @@ dependencies {
 }
 
 node {
-    version = '12.13.1'
+    version = '14.16.0'
     download = true
-}
-
-task buildGulp(type: NpmTask, dependsOn: npmInstall) {
-    args = ["run", "gulp"]
-    inputs.file("gulpfile.js")
-    inputs.dir("src")
-    outputs.dir("build")
 }
 
 task webpack(type:NodeTask) {
@@ -47,5 +40,5 @@ task webpack(type:NodeTask) {
     ]
 }
 
-webpack.dependsOn buildGulp
+webpack.dependsOn npmInstall
 jar.dependsOn webpack
