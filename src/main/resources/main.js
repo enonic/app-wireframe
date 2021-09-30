@@ -4,8 +4,8 @@ const clusterLib = require('/lib/xp/cluster');
 const exportLib = require('/lib/xp/export');
 
 const projectData = {
-    id: 'wire-frame',
-    displayName: 'Wire frame',
+    id: 'wireframe',
+    displayName: 'Wireframe',
     description: 'Demo site for the wireframe app',
     readAccess: {
         public: true
