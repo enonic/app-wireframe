@@ -2,7 +2,6 @@ const webpack = require("webpack");
 const path = require("path");
 const globImporter = require("node-sass-glob-importer");
 
-const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const ImageminPlugin = require("imagemin-webpack-plugin").default;
 const CopyWebpackPlugin = require("copy-webpack-plugin");
@@ -26,7 +25,7 @@ JS_CONFIG = {
         filename: "assets/js/[name].min.js",
     },
     optimization: {
-        minimizer: [new UglifyJsPlugin()],
+        minimize: true,
     },
     plugins: [
         new webpack.ProvidePlugin({
@@ -61,9 +60,14 @@ STYLE_ASSETS_CONFIG = {
                 use: [
                     {
                         loader: MiniCssExtractPlugin.loader,
-                        options: { publicPath: "../" },
+                        // options: { publicPath: "../" },
                     },
-                    "css-loader",
+                    {
+                        loader: "css-loader",
+                        options: {
+                            url: false,
+                        }
+                    },
                     {
                         loader: "postcss-loader",
                         options: {
