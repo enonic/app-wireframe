@@ -3,7 +3,6 @@ const path = require("path");
 const globImporter = require("node-sass-glob-importer");
 
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const ImageminPlugin = require("imagemin-webpack-plugin").default;
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const HtmlMinifierPlugin = require("html-minifier-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
@@ -120,15 +119,6 @@ STYLE_ASSETS_CONFIG = {
     plugins: [
         new MiniCssExtractPlugin({
             filename: "./assets/css/[name].css",
-        }),
-        new ImageminPlugin({
-            disable: !isProd, // Disable during development
-            pngquant: {
-                quality: "95-100",
-            },
-            progressive: true,
-            svgoPlugins: [{ removeViewBox: false }],
-            test: /\.(jpe?g|png|gif|svg)$/i,
         }),
         new HtmlMinifierPlugin({
             collapseWhitespace: true,
