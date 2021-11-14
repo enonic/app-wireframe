@@ -6,6 +6,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const ImageminPlugin = require("imagemin-webpack-plugin").default;
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const HtmlMinifierPlugin = require("html-minifier-webpack-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
 
 const isProd = true;
 
@@ -25,7 +26,17 @@ JS_CONFIG = {
         filename: "assets/js/[name].min.js",
     },
     optimization: {
-        minimize: true,
+        minimize: isProd,
+        minimizer: isProd ? [
+            new TerserPlugin({
+                terserOptions: {
+                    format: {
+                        comments: false,
+                    },
+                },
+                extractComments: false,
+            })
+        ] : [],
     },
     plugins: [
         new webpack.ProvidePlugin({
