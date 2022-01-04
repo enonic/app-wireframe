@@ -15,7 +15,7 @@ app {
 
 repositories {
     mavenCentral()
-    xp.enonicRepo('dev')
+    xp.enonicRepo()
 }
 
 dependencies {
@@ -27,14 +27,14 @@ dependencies {
     include "com.enonic.xp:lib-context:${xpVersion}"
     include "com.enonic.xp:lib-export:${xpVersion}"
 
-    
+
     include "com.enonic.lib:lib-menu:3.0.0"
     include "com.enonic.lib:lib-thymeleaf:2.0.0"
     include "com.enonic.lib:lib-util:2.0.0"
 }
 
 node {
-    version = '15.8.0'
+    version = '16.0.0'
     download = true
 }
 
