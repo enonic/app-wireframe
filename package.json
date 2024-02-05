@@ -9,7 +9,7 @@
     "jshint": "^2.13.6",
     "mini-css-extract-plugin": "^2.8.0",
     "node-sass-glob-importer": "^5.3.3",
-    "postcss-loader": "^8.0.0",
+    "postcss-loader": "^8.1.0",
     "postcss-preset-env": "^9.3.0",
     "sass": "^1.70.0",
     "sass-loader": "^14.0.0",
