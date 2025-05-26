@@ -15,7 +15,7 @@
     "sass-loader": "^14.2.1",
     "terser-webpack-plugin": "^5.3.14",
     "url-loader": "^4.1.1",
-    "webpack": "^5.99.8",
+    "webpack": "^5.99.9",
     "webpack-cli": "^6.0.1"
   },
   "private": true
