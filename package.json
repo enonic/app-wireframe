@@ -7,7 +7,7 @@
     "html-minifier-webpack-plugin": "^2.2.3",
     "jquery": "^4.0.0",
     "jshint": "^2.13.6",
-    "mini-css-extract-plugin": "^2.9.4",
+    "mini-css-extract-plugin": "^2.10.0",
     "node-sass-glob-importer": "^5.3.3",
     "postcss-loader": "^8.2.0",
     "postcss-preset-env": "^10.6.1",
