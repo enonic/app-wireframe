@@ -1,6 +1,6 @@
 [versions]
 menu = "5.0.0-SNAPSHOT"
-thymeleaf   = "3.0.0-SNAPSHOT"
+thymeleaf = "3.0.0-SNAPSHOT"
 util = "4.0.0-SNAPSHOT"
 
 [libraries]
