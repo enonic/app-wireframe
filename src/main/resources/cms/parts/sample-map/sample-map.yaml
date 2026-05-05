@@ -1,0 +1,43 @@
+kind: "Part"
+title: "Sample map"
+form:
+  - type: "TextLine"
+    name: "label"
+    label: "Label"
+    occurrences:
+      min: 0
+      max: 1
+  - type: "ComboBox"
+    name: "aspectRatio"
+    label: "Aspect ratio"
+    occurrences:
+      min: 1
+      max: 1
+    options:
+      - value: "cinema"
+        label: "Cinema (21:9)"
+      - value: "widescreen"
+        label: "Widescreen (16:9)"
+      - value: "regular"
+        label: "Regular (4:3)"
+      - value: "square"
+        label: "Square (1:1)"
+      - value: "portrait"
+        label: "Portrait (3:4)"
+      - value: "tall"
+        label: "Tall (9:16)"
+      - value: "skyscraper"
+        label: "Skyscraper (9:21)"
+    default: "widescreen"
+  - type: "ContentSelector"
+    name: "linkedPage"
+    label: "Linked page"
+    occurrences:
+      min: 0
+      max: 1
+    attributes:
+      relationshipType: "system:reference"
+    allowContentType:
+      - "landing-page"
+    allowPath:
+      - "${site}"

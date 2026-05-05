@@ -1,0 +1,11 @@
+kind: "Layout"
+title: "1 column"
+form:
+  - type: "CheckBox"
+    name: "fullWidth"
+    label: "Full width"
+    occurrences:
+      min: 0
+      max: 1
+regions:
+  - "center"

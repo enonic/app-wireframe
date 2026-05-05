@@ -1,0 +1,5 @@
+kind: "ContentType"
+superType: "base:structured"
+final: true
+title: "Landing page"
+form: []
