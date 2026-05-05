@@ -1,0 +1,32 @@
+kind: "Part"
+title: "Sample form"
+form:
+  - type: "ItemSet"
+    name: "formRow"
+    label: "Form row"
+    occurrences:
+      min: 0
+      max: 0
+    items:
+      - type: "TextLine"
+        name: "label"
+        label: "Label"
+        occurrences:
+          min: 1
+          max: 1
+      - type: "ComboBox"
+        name: "input"
+        label: "Input"
+        occurrences:
+          min: 1
+          max: 1
+        options:
+          - value: "text"
+            label: "Text"
+          - value: "textarea"
+            label: "Textarea"
+          - value: "dropdown"
+            label: "Dropdown"
+          - value: "checkbox"
+            label: "Checkbox"
+        default: "text"

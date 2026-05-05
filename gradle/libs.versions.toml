@@ -1,0 +1,9 @@
+[versions]
+menu = "4.2.1"
+thymeleaf = "2.1.1"
+util = "3.1.1"
+
+[libraries]
+lib-menu      = { module = "com.enonic.lib:lib-menu",      version.ref = "menu" }
+lib-thymeleaf = { module = "com.enonic.lib:lib-thymeleaf", version.ref = "thymeleaf" }
+lib-util      = { module = "com.enonic.lib:lib-util",      version.ref = "util" }
