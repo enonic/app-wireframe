@@ -8,6 +8,7 @@ plugins {
 repositories {
     mavenCentral()
     xp.enonicRepo()
+    xp.enonicRepo('dev')
 }
 
 dependencies {
@@ -18,9 +19,9 @@ dependencies {
     include xplibs.context
     include xplibs.export
 
-    include(libs.lib.menu)      { exclude group: 'com.enonic.xp' }
-    include(libs.lib.thymeleaf) { exclude group: 'com.enonic.xp' }
-    include(libs.lib.util)      { exclude group: 'com.enonic.xp' }
+    include libs.lib.menu
+    include libs.lib.thymeleaf
+    include libs.lib.util
 }
 
 node {
