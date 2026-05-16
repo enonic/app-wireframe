@@ -2,7 +2,7 @@ var libs = {
     portal: require('/lib/xp/portal'),
     thymeleaf: require('/lib/thymeleaf'),
     menu: require('/lib/menu'),
-    util: require('/lib/util')
+    util: require('/lib/util/data')
 };
 
 // Handle GET request
@@ -24,12 +24,12 @@ function handleGet(req) {
         model.currentPath = content._path;
         model.pageTitle = getPageTitle();
         model.metaDescription = getMetaDescription();
-        model.menuItems = libs.menu.getMenuTree(3);
+        model.menuItems = libs.menu.getMenuTree(3).menuItems;
         model.companyName = siteConfig.companyName;
 
         model.showFooterNav = siteConfig.footerNavigation ? true : false;
-        model.footerSocial = libs.util.data.forceArray(siteConfig.footerSocial);
-        model.footerSocial = libs.util.data.trimArray(model.footerSocial);
+        model.footerSocial = libs.util.forceArray(siteConfig.footerSocial);
+        model.footerSocial = libs.util.trimArray(model.footerSocial);
         model.footerText = siteConfig.footerText;
 
         model.showFooter = model.showFooterNav || model.footerSocial.length > 0 || model.footerText;

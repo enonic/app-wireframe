@@ -1,7 +1,7 @@
 var libs = {
     portal: require('/lib/xp/portal'),
     thymeleaf: require('/lib/thymeleaf'),
-    util: require('/lib/util')
+    util: require('/lib/util/region')
 };
 
 // Handle GET request
@@ -16,7 +16,7 @@ function handleGet(req) {
         var model = {};
         model.layoutBaseClass = getLayoutBaseClass();
         model.fullWidth = component.config.fullWidth ? true : false;
-        model.regions = libs.util.region.get();
+        model.regions = libs.util.get();
 
         return model;
     }
