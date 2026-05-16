@@ -23,7 +23,7 @@ function handleGet(req) {
         model.currentPath = content._path;
         model.pageTitle = getPageTitle();
         model.metaDescription = getMetaDescription();
-        model.menuItems = libs.menu.getMenuTree(3);
+        model.menuItems = libs.menu.getMenuTree(3).menuItems;
         model.companyName = siteConfig.companyName;
 
         model.showFooterNav = siteConfig.footerNavigation ? true : false;
