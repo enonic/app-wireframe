@@ -1,8 +1,7 @@
 var libs = {
     portal: require('/lib/xp/portal'),
     thymeleaf: require('/lib/thymeleaf'),
-    menu: require('/lib/menu'),
-    util: require('/lib/util')
+    menu: require('/lib/menu')
 };
 
 // Handle GET request
@@ -28,8 +27,8 @@ function handleGet(req) {
         model.companyName = siteConfig.companyName;
 
         model.showFooterNav = siteConfig.footerNavigation ? true : false;
-        model.footerSocial = libs.util.data.forceArray(siteConfig.footerSocial);
-        model.footerSocial = libs.util.data.trimArray(model.footerSocial);
+        model.footerSocial = (Array.isArray(siteConfig.footerSocial) ? siteConfig.footerSocial : [siteConfig.footerSocial]);
+        model.footerSocial = model.footerSocial.filter(function (v) { return v != null && v !== ''; });
         model.footerText = siteConfig.footerText;
 
         model.showFooter = model.showFooterNav || model.footerSocial.length > 0 || model.footerText;

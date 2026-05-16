@@ -1,9 +1,7 @@
 [versions]
 menu = "5.0.0-SNAPSHOT"
 thymeleaf = "3.0.0-SNAPSHOT"
-util = "4.0.0-SNAPSHOT"
 
 [libraries]
 lib-menu      = { module = "com.enonic.lib:lib-menu",      version.ref = "menu" }
 lib-thymeleaf = { module = "com.enonic.lib:lib-thymeleaf", version.ref = "thymeleaf" }
-lib-util      = { module = "com.enonic.lib:lib-util",      version.ref = "util" }

@@ -21,7 +21,6 @@ dependencies {
 
     include libs.lib.menu
     include libs.lib.thymeleaf
-    include libs.lib.util
 }
 
 node {
