@@ -1,7 +1,7 @@
 var libs = {
     portal: require('/lib/xp/portal'),
     thymeleaf: require('/lib/thymeleaf'),
-    util: require('/lib/util')
+    util: require('/lib/util/data')
 };
 
 // Handle GET request
@@ -22,8 +22,8 @@ function handleGet(req) {
 
     function getFormRows() {
         var formRows = component.config.formRow;
-        formRows = libs.util.data.forceArray(formRows);
-        formRows = libs.util.data.trimArray(formRows);
+        formRows = libs.util.forceArray(formRows);
+        formRows = libs.util.trimArray(formRows);
         return formRows;
     }
 
