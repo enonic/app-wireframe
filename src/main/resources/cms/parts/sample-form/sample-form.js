@@ -1,7 +1,6 @@
 var libs = {
     portal: require('/lib/xp/portal'),
-    thymeleaf: require('/lib/thymeleaf'),
-    util: require('/lib/util/data')
+    thymeleaf: require('/lib/thymeleaf')
 };
 
 // Handle GET request
@@ -22,8 +21,8 @@ function handleGet(req) {
 
     function getFormRows() {
         var formRows = component.config.formRow;
-        formRows = libs.util.forceArray(formRows);
-        formRows = libs.util.trimArray(formRows);
+        formRows = (Array.isArray(formRows) ? formRows : [formRows]);
+        formRows = formRows.filter(function (v) { return v != null && v !== ''; });
         return formRows;
     }
 
