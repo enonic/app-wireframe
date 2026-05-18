@@ -7,9 +7,7 @@ const projectData = {
     id: 'wireframe',
     displayName: 'Wireframe',
     description: 'Demo site for the wireframe app',
-    readAccess: {
-        public: true
-    }
+    publicRead: true
 }
 
 function runInContext(callback) {
