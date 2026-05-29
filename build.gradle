@@ -18,6 +18,7 @@ dependencies {
     include xplibs.cluster
     include xplibs.context
     include xplibs.export
+    include xplibs.task
 
     include libs.lib.menu
     include libs.lib.thymeleaf
