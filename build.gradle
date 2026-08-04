@@ -22,6 +22,10 @@ dependencies {
 
     include libs.lib.menu
     include libs.lib.thymeleaf
+
+    testImplementation "com.enonic.xp:testing:${xpVersion}"
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:6.1.1'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher:6.1.1'
 }
 
 node {
@@ -46,3 +50,11 @@ processResources {
 }
 
 jar.dependsOn webpack
+
+test {
+    useJUnitPlatform()
+}
+
+xp {
+    scriptEngines = ['Nashorn', 'GraalJS']
+}
