@@ -27,7 +27,7 @@ dependencies {
     include "com.enonic.xp:lib-context:${xpVersion}"
     include "com.enonic.xp:lib-export:${xpVersion}"
 
-    
+
     include "com.enonic.lib:lib-menu:3.0.0"
     include "com.enonic.lib:lib-thymeleaf:2.0.0"
     include "com.enonic.lib:lib-util:2.0.0"
@@ -43,6 +43,14 @@ task webpack(type:NodeTask) {
     args = [
             '--color',
     ]
+}
+
+tasks.register('dev', Exec) {
+    if (org.gradle.internal.os.OperatingSystem.current().isWindows()) {
+        commandLine 'cmd', '/c', 'gradlew.bat', 'deploy', '-t'
+    } else {
+        commandLine './gradlew', 'deploy', '-t'
+    }
 }
 
 webpack.dependsOn npmInstall
