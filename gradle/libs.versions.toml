@@ -1,5 +1,5 @@
 [versions]
-menu = "5.0.0"
+menu = "5.0.1"
 thymeleaf = "3.0.0"
 
 [libraries]
