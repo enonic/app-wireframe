@@ -29,7 +29,7 @@ dependencies {
 }
 
 node {
-    version = '16.0.0'
+    version = '16.20.2'
     download = true
 }
 
